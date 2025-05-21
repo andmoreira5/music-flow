@@ -4,10 +4,11 @@
 
 This project manages classes in a music school, allowing you to organize students, teachers, and their respective courses in a visual and structured way.
 
-<!-- ## Demo
+## Demo
 
-![Interface demo](./screenshot.png)
+[Access the project](https://music-flow-ten.vercel.app/)
 
+<!--
 ## Features
 
 - Register classes, teachers, and students

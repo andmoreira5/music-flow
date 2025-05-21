@@ -4,8 +4,11 @@
 
 Este projeto gerencia turmas de uma escola de música, permitindo agrupar alunos, professores e os respectivos cursos de forma organizada e visual.
 
-<!-- ## Demonstração
+## Demonstração
 
+[Acesse o projeto](https://music-flow-ten.vercel.app/)
+
+<!--
 ![Demonstração da interface](./screenshot.png)
 
 ## Funcionalidades
