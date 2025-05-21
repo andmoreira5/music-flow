@@ -1,7 +1,7 @@
 {
   "name": "music-flow",
   "private": true,
-  "version": "0.0.0",
+  "version": "1.0",
   "type": "module",
   "scripts": {
     "dev": "vite",
@@ -13,6 +13,10 @@
     "@tailwindcss/vite": "^4.1.7",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
+    "react-icons": "^5.5.0",
+    "react-router-dom": "^7.6.0",
+    "react-spinners": "^0.17.0",
+    "react-toastify": "^11.0.5",
     "tailwindcss": "^4.1.7"
   },
   "devDependencies": {
