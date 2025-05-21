@@ -60,7 +60,7 @@ export default function Login() {
     >
       <div className="w-full max-w-sm  p-6 rounded-lg bg-gray-700 border-4 border-white">
         <div className="flex flex-row items-center justify-center mb-4 gap-1">
-          <img src="../../public/favicon.svg" className="w-20 h-20" />
+          <img src="/favicon.svg" className="w-20 h-20" />
           <h1 className="text-center  text-2xl font-bold  text-white ">
             Bem-vindo(a) ao Music Flow
           </h1>
