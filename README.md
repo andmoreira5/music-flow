@@ -6,6 +6,14 @@ Este projeto gerencia turmas de uma escola de música, permitindo agrupar alunos
 
 ## Demonstração
 
+**Dados de login:**
+
+- E-mail: test@example.com
+- Senha: password@test
+
+> Este projeto tem caráter exclusivamente visual, sem integração com backend.
+> As informações inseridas ou removidas são armazenadas localmente, apenas para fins de demonstração.
+
 [Acesse o projeto](https://music-flow-ten.vercel.app/)
 
 <!--
@@ -20,20 +28,35 @@ Este projeto gerencia turmas de uma escola de música, permitindo agrupar alunos
 
 ## Tecnologias utilizadas
 
-- ⚛️ React
-- 💅 Tailwind CSS
-- 📜 JavaScript
-- 📦 Vite / Webpack
-- 🔗 React Router
-- 📁 Context API
+- React
+- Tailwind CSS
+- JavaScript
+- Vite
+- React Router
+- Context API
 
-## Como rodar o projeto
+## Como rodar o projeto em sua máquina
 
 Clone o repositório:
 
 ```bash
 git clone https://github.com/seu-usuario/music-flow.git
+```
+
+Acesse o diretório:
+
+```bash
 cd music-flow
+```
+
+Instale as dependências;
+
+```bash
 npm install
+```
+
+Execute a aplicação:
+
+```bash
 npm run dev
 ```

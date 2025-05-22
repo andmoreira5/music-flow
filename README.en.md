@@ -6,6 +6,14 @@ This project manages classes in a music school, allowing you to organize student
 
 ## Demo
 
+**Login credentials:**
+
+- Email: test@example.com
+- Password: password@test
+
+> This project is purely visual, with no backend integration.  
+> All inserted or removed data is stored locally for demonstration purposes only.
+
 [Access the project](https://music-flow-ten.vercel.app/)
 
 <!--
@@ -18,20 +26,35 @@ This project manages classes in a music school, allowing you to organize student
 
 ## Technologies used
 
-- ⚛️ React
-- 💅 Tailwind CSS
-- 📜 JavaScript
-- 📦 Vite / Webpack
-- 🔗 React Router
-- 📁 Context API
+- React
+- Tailwind CSS
+- JavaScript
+- Vite
+- React Router
+- Context API
 
 ## How to run the project
 
 Clone the repository:
 
 ```bash
-git clone https://github.com/your-username/music-flow.git
+git clone https://github.com/seu-usuario/music-flow.git
+```
+
+Navigate to the project directory:
+
+```bash
 cd music-flow
+```
+
+Install dependencies;
+
+```bash
 npm install
+```
+
+Run the application:
+
+```bash
 npm run dev
 ```
