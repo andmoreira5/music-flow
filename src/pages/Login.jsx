@@ -3,9 +3,11 @@ import { RiEyeFill, RiEyeOffFill } from "react-icons/ri";
 import { toast } from "react-toastify";
 import { version } from "../../package.json";
 import MiniLoader from "../components/mini loader/MiniLoader.jsx";
+import { useNavigate } from "react-router-dom";
 
 export default function Login() {
   const [viewportHeight, setViewportHeight] = useState(window.innerHeight);
+  const navigate = useNavigate();
 
   const [passwordVisible, setPasswordVisible] = useState(false);
   const [username, setUsername] = useState("");
@@ -41,9 +43,10 @@ export default function Login() {
     } else {
       setCarregando(true);
       setTimeout(() => {
-        toast.success("LOGIN BEM SUCEDIDO");
+        // navigate("Home");
+        toast.success("Login bem-sucedido!");
         setCarregando(false);
-      }, 3000);
+      }, 1000);
     }
   };
 

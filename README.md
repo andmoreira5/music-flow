@@ -1,32 +1,30 @@
-> 🇧🇷 Este README está em português. Para a versão em inglês, [clique aqui](./README.en.md).
+> 🇺🇸 This README is in English. For the Portuguese version, [click here](./README.ptbr.md).
 
 # Music Flow
 
-Este projeto gerencia turmas de uma escola de música, permitindo agrupar alunos, professores e os respectivos cursos de forma organizada e visual.
+This project manages classes in a music school, allowing you to organize students, teachers, and their respective courses in a visual and structured way.
 
-## Demonstração
+## Demo
 
-**Dados de login:**
+**Login credentials:**
 
-- E-mail: test@example.com
-- Senha: password@test
+- Email: test@example.com
+- Password: password@test
 
-> Este projeto tem caráter exclusivamente visual, sem integração com backend.
-> As informações inseridas ou removidas são armazenadas localmente, apenas para fins de demonstração.
+> This project is purely visual, with no backend integration.  
+> All inserted or removed data is stored locally for demonstration purposes only.
 
-[Acesse o projeto](https://music-flow-ten.vercel.app/)
+[Access the project](https://music-flow-ten.vercel.app/)
 
 <!--
-![Demonstração da interface](./screenshot.png)
+## Features
 
-## Funcionalidades
+- Register classes, teachers, and students
+- Group users by course
+- Intuitive admin interface
+- Search and filter information -->
 
-- Cadastro de turmas, professores e alunos
-- Agrupamento de usuários por curso
-- Interface intuitiva para administração
-- Busca e filtragem de informações -->
-
-## Tecnologias utilizadas
+## Technologies used
 
 - React
 - Tailwind CSS
@@ -35,27 +33,27 @@ Este projeto gerencia turmas de uma escola de música, permitindo agrupar alunos
 - React Router
 - Context API
 
-## Como rodar o projeto em sua máquina
+## How to run the project
 
-Clone o repositório:
+Clone the repository:
 
 ```bash
-git clone https://github.com/seu-usuario/music-flow.git
+git clone https://github.com/andmoreira5/music-flow.git
 ```
 
-Acesse o diretório:
+Navigate to the project directory:
 
 ```bash
 cd music-flow
 ```
 
-Instale as dependências;
+Install dependencies;
 
 ```bash
 npm install
 ```
 
-Execute a aplicação:
+Run the application:
 
 ```bash
 npm run dev

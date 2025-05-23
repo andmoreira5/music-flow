@@ -4,10 +4,13 @@ import "./index.css";
 import App from "./App.jsx";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import ContextProvider from "./context/ContextProvider.jsx";
 
 createRoot(document.getElementById("root")).render(
   <StrictMode>
-    <App />
-    <ToastContainer theme="dark" autoClose={10000} />
+    <ContextProvider>
+      <App />
+      <ToastContainer theme="dark" autoClose={10000} />
+    </ContextProvider>
   </StrictMode>
 );
