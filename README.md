@@ -50,7 +50,7 @@ Navigate to the project directory:
 cd music-flow
 ```
 
-Install dependencies;
+Install dependencies:
 
 ```bash
 npm install

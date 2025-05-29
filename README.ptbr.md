@@ -52,7 +52,7 @@ Acesse o diretório:
 cd music-flow
 ```
 
-Instale as dependências;
+Instale as dependências:
 
 ```bash
 npm install
