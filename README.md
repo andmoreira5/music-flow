@@ -8,9 +8,10 @@ This project manages classes in a music school, allowing you to organize student
 
 **Login credentials:**
 
-- Email: test@example.com
-- Password: password@test
+- Email: adm@adm.com
+- Password: adm065
 
+> The login information is automatically filled in when the system initializes.
 > This project is purely visual, with no backend integration.  
 > All inserted or removed data is stored locally for demonstration purposes only.
 
@@ -32,6 +33,8 @@ This project manages classes in a music school, allowing you to organize student
 - Vite
 - React Router
 - Context API
+- Vitest
+- Testing Library
 
 ## How to run the project
 

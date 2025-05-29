@@ -4,16 +4,19 @@ import { toast } from "react-toastify";
 import { version } from "../../package.json";
 import MiniLoader from "../components/mini loader/MiniLoader.jsx";
 import { useNavigate } from "react-router-dom";
+import { useAppContext } from "../context/ContextProvider.jsx";
+import { dataLogin, userData } from "../data/login.js";
 
 export default function Login() {
   const [viewportHeight, setViewportHeight] = useState(window.innerHeight);
   const navigate = useNavigate();
-
+  const { setIsLoggedIn, setUserData } = useAppContext();
   const [passwordVisible, setPasswordVisible] = useState(false);
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [isDarkMode] = useState(true);
-  const [carregando, setCarregando] = useState(false);
+  const [loading, setLoading] = useState(false);
+
   useEffect(() => {
     if (isDarkMode) {
       document.documentElement.classList.add("dark");
@@ -23,6 +26,9 @@ export default function Login() {
   }, [isDarkMode]);
 
   useEffect(() => {
+    setUsername(dataLogin.email);
+    setPassword(dataLogin.password);
+
     const handleResize = () => {
       setViewportHeight(window.visualViewport?.height || window.innerHeight);
     };
@@ -41,11 +47,12 @@ export default function Login() {
     if (username === "" || password === "") {
       toast.error("E-MAIL OU SENHA NÃO PODEM FICAR VAZIOS");
     } else {
-      setCarregando(true);
+      setLoading(true);
       setTimeout(() => {
-        // navigate("Home");
-        toast.success("Login bem-sucedido!");
-        setCarregando(false);
+        setIsLoggedIn(true);
+        setUserData(userData);
+        navigate("/home");
+        setLoading(false);
       }, 1000);
     }
   };
@@ -96,7 +103,7 @@ export default function Login() {
             />
           )}
         </div>
-        {carregando ? (
+        {loading ? (
           <MiniLoader />
         ) : (
           <button

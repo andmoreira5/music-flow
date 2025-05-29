@@ -8,9 +8,10 @@ Este projeto gerencia turmas de uma escola de música, permitindo agrupar alunos
 
 **Dados de login:**
 
-- E-mail: test@example.com
-- Senha: password@test
+- Email: adm@adm.com
+- Password: adm065
 
+> As informações de login são preenchidas automaticamente ao inicializar o sistema.
 > Este projeto tem caráter exclusivamente visual, sem integração com backend.
 > As informações inseridas ou removidas são armazenadas localmente, apenas para fins de demonstração.
 
@@ -34,6 +35,8 @@ Este projeto gerencia turmas de uma escola de música, permitindo agrupar alunos
 - Vite
 - React Router
 - Context API
+- Vitest
+- Testing Library
 
 ## Como rodar o projeto em sua máquina
 

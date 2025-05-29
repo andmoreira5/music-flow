@@ -1,6 +1,6 @@
 export const dataLogin = {
-  email: "test@example.com",
-  password: "password@test",
+  email: "adm@adm.com",
+  password: "adm065",
 };
 
 export const userData = {
