@@ -76,6 +76,7 @@ export default function Login() {
           </h1>
         </div>
         <input
+          data-testid="inputEmailLogin"
           type="email"
           placeholder="E-mail"
           value={username}
@@ -84,6 +85,7 @@ export default function Login() {
         />
         <div className="w-full mb-4 p-2 bg-white  mr-5 inset-y-0 right-0 flex items-center justify-center border border-gray-300 rounded">
           <input
+            data-testid="inputPasswordLogin"
             type={passwordVisible ? "text" : "password"}
             placeholder="Senha"
             value={password}
@@ -104,9 +106,10 @@ export default function Login() {
           )}
         </div>
         {loading ? (
-          <MiniLoader />
+          <MiniLoader data-testid="miniLoaderLogin" />
         ) : (
           <button
+            data-testid="buttonLogin"
             onClick={handleLogin}
             className="w-full font-bold bg-blue-500 text-white py-2 rounded hover:bg-blue-600 cursor-pointer"
           >
