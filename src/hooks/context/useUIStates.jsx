@@ -5,5 +5,7 @@ export function useUIStates() {
     return localStorage.getItem("isDarkMode") === "true";
   });
 
-  return { isDarkMode, setDarkMode };
+  const [screen, setScreen] = useState({ title: "HOME" });
+
+  return { isDarkMode, setDarkMode, screen, setScreen };
 }

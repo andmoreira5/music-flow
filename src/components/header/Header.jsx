@@ -5,7 +5,7 @@ import { useAppContext } from "../../context/ContextProvider.jsx";
 import LogoutButton from "../button/LogOut.jsx";
 
 export default function Header() {
-  const { isDarkMode, setDarkMode, userData } = useAppContext();
+  const { isDarkMode, setDarkMode, userData, screen } = useAppContext();
 
   const toggleDarkMode = (checked) => {
     localStorage.setItem("isDarkMode", checked);
@@ -30,9 +30,13 @@ export default function Header() {
         className={`  dark:text-white  text-sky-200  text-center  items-center flex flex-col justify-center `}
       >
         <h1 className="font-bold text-[1.15rem] md:text-2xl mb-2">
-          {getGreeting() + ", " + userData.name.toUpperCase() + "!"}
+          {screen.title == "HOME"
+            ? getGreeting() + ", " + userData.name.toUpperCase() + "!"
+            : screen.title}
         </h1>
-        <h2 className="hidden sm:block">{userData.userType}</h2>
+        {screen.title == "HOME" && (
+          <h2 className="hidden sm:block">{userData.userType}</h2>
+        )}
       </div>
       <div
         className=" items-center justify-center flex flex-col bg-white  dark:bg-gray-600

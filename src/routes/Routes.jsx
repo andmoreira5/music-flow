@@ -2,6 +2,7 @@ import { Routes, Route, Navigate, BrowserRouter } from "react-router-dom";
 import Login from "../pages/Login.jsx";
 import ProtectedRoute from "./ProtectedRoute.jsx";
 import Home from "../pages/Home.jsx";
+import ManageRegistrations from "../pages/ManageRegistrations.jsx";
 
 export default function MyRoutes() {
   return (
@@ -14,6 +15,15 @@ export default function MyRoutes() {
           element={
             <ProtectedRoute>
               <Home />
+            </ProtectedRoute>
+          }
+        />
+
+        <Route
+          path={"/manageRegistrations"}
+          element={
+            <ProtectedRoute>
+              <ManageRegistrations />
             </ProtectedRoute>
           }
         />
