@@ -1,3 +1,5 @@
+import ListItemsManager from "../components/list/ListItemsManager.jsx";
+
 export default function ManageRegistrations() {
-  return <div>MANAGE REGISTRATIONS</div>;
+  return <ListItemsManager />;
 }
