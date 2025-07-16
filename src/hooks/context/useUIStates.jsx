@@ -6,6 +6,14 @@ export function useUIStates() {
   });
 
   const [screen, setScreen] = useState({ title: "HOME" });
-
-  return { isDarkMode, setDarkMode, screen, setScreen };
+  const [visibleConfirmationScreen, setVisibleConfirmationScreen] =
+    useState(false);
+  return {
+    isDarkMode,
+    setDarkMode,
+    screen,
+    setScreen,
+    visibleConfirmationScreen,
+    setVisibleConfirmationScreen,
+  };
 }

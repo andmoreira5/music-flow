@@ -1,16 +1,17 @@
-import { FaPencilAlt, FaTrashAlt } from "react-icons/fa";
+import { FaTrashAlt } from "react-icons/fa";
 import ButtonActionItem from "../button/ButtonActionItem.jsx";
 import { getUrlPhoto } from "../../data/url.js";
 import { useAppContext } from "../../context/ContextProvider.jsx";
 
-export default function CardPerson({ item, showButtons = false }) {
-  const { tableSelected } = useAppContext();
+export default function CardPerson({ item, showButtons = true }) {
+  const { tableSelected, setVisibleConfirmationScreen, setSelectedItem } =
+    useAppContext();
   const renderItem = () => {
     switch (tableSelected) {
       default:
         return (
           <img
-            src={getUrlPhoto(item.photo)}
+            src={getUrlPhoto(item?.photo)}
             alt={item?.name}
             className="w-full h-full object-cover "
           />
@@ -40,18 +41,20 @@ export default function CardPerson({ item, showButtons = false }) {
 
       {showButtons && (
         <div className="mr-0 sm:mr-2 flex flex-row sm:flex-col gap-5  ">
-          <ButtonActionItem color={"bg-blue-500"}>
+          {/* <ButtonActionItem color={"bg-blue-500"}>
             <FaPencilAlt size={20} color="white" />
             <span>Editar</span>
+          </ButtonActionItem> */}
+          <ButtonActionItem
+            color={"bg-red-500"}
+            onClick={() => {
+              setVisibleConfirmationScreen(true);
+              setSelectedItem(item);
+            }}
+          >
+            <FaTrashAlt size={20} color="white" />
+            <span>Excluir</span>
           </ButtonActionItem>
-          {tableSelected == "localidade" && item.id == 1 ? (
-            <></>
-          ) : (
-            <ButtonActionItem color={"bg-red-500"}>
-              <FaTrashAlt size={20} color="white" />
-              <span>Excluir</span>
-            </ButtonActionItem>
-          )}
         </div>
       )}
     </div>
