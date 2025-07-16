@@ -1,5 +1,6 @@
 export const student = [
   {
+    id: 1,
     name: "Ana Souza",
     dateOfBirth: "1992-03-15",
     photo: "Ana+Souza",
@@ -8,6 +9,7 @@ export const student = [
     schoolClass: "SEM TURMA",
   },
   {
+    id: 2,
     name: "Bruno Oliveira",
     dateOfBirth: "1988-07-22",
     photo: "Bruno+Oliveira",
@@ -16,6 +18,7 @@ export const student = [
     schoolClass: "SEM TURMA",
   },
   {
+    id: 3,
     name: "Carla Lima",
     dateOfBirth: "1995-01-10",
     photo: "Carla+Lima",
@@ -24,6 +27,7 @@ export const student = [
     schoolClass: "SEM TURMA",
   },
   {
+    id: 4,
     name: "Diego Martins",
     dateOfBirth: "1990-11-03",
     photo: "Diego+Martins",
@@ -32,6 +36,7 @@ export const student = [
     schoolClass: "SEM TURMA",
   },
   {
+    id: 5,
     name: "Eduarda Fernandes",
     dateOfBirth: "1998-05-17",
     photo: "Eduarda+Fernandes",
@@ -40,6 +45,7 @@ export const student = [
     schoolClass: "SEM TURMA",
   },
   {
+    id: 6,
     name: "Felipe Rocha",
     dateOfBirth: "1993-08-29",
     photo: "Felipe+Rocha",
@@ -48,6 +54,7 @@ export const student = [
     schoolClass: "SEM TURMA",
   },
   {
+    id: 7,
     name: "Giovana Teixeira",
     dateOfBirth: "2000-02-04",
     photo: "Giovana+Teixeira",
@@ -56,6 +63,7 @@ export const student = [
     schoolClass: "SEM TURMA",
   },
   {
+    id: 8,
     name: "Henrique Dias",
     dateOfBirth: "1987-09-12",
     photo: "Henrique+Dias",
@@ -64,6 +72,7 @@ export const student = [
     schoolClass: "SEM TURMA",
   },
   {
+    id: 9,
     name: "Isabela Santos",
     dateOfBirth: "1996-06-25",
     photo: "Isabela+Santos",
@@ -72,6 +81,7 @@ export const student = [
     schoolClass: "SEM TURMA",
   },
   {
+    id: 10,
     name: "João Pedro Almeida",
     dateOfBirth: "1991-12-30",
     photo: "João+Pedro+Almeida",
