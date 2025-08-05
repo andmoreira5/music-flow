@@ -1,11 +1,15 @@
-import { FaTrashAlt } from "react-icons/fa";
+import { FaPencilAlt, FaTrashAlt } from "react-icons/fa";
 import ButtonActionItem from "../button/ButtonActionItem.jsx";
 import { getUrlPhoto } from "../../data/url.js";
 import { useAppContext } from "../../context/ContextProvider.jsx";
 
 export default function CardPerson({ item, showButtons = true }) {
-  const { tableSelected, setVisibleConfirmationScreen, setSelectedItem } =
+  const { tableSelected, setSelectedItem, setVisibleConfirmationScreen } =
     useAppContext();
+  const handleDelete = () => {
+    setSelectedItem(item);
+    setVisibleConfirmationScreen(true);
+  };
   const renderItem = () => {
     switch (tableSelected) {
       default:
@@ -31,7 +35,7 @@ export default function CardPerson({ item, showButtons = true }) {
           {renderItem()}
         </div>
         <div className="ml-4 flex-1">
-          <h2 className="text-lg font-bold">{item?.name.toUpperCase()}</h2>
+          <h2 className="text-lg font-bold">{item?.name?.toUpperCase()}</h2>
           <div className="pl-1">
             <p className="text-sm opacity-70">{item?.address}</p>
             <p className="text-sm opacity-70">{item?.schoolClass}</p>
@@ -45,16 +49,14 @@ export default function CardPerson({ item, showButtons = true }) {
             <FaPencilAlt size={20} color="white" />
             <span>Editar</span>
           </ButtonActionItem> */}
-          <ButtonActionItem
-            color={"bg-red-500"}
-            onClick={() => {
-              setVisibleConfirmationScreen(true);
-              setSelectedItem(item);
-            }}
-          >
-            <FaTrashAlt size={20} color="white" />
-            <span>Excluir</span>
-          </ButtonActionItem>
+          {tableSelected == "localidade" && item.id == 1 ? (
+            <></>
+          ) : (
+            <ButtonActionItem color={"bg-red-500"} onClick={handleDelete}>
+              <FaTrashAlt size={20} color="white" />
+              <span>Excluir</span>
+            </ButtonActionItem>
+          )}
         </div>
       )}
     </div>
