@@ -4,9 +4,9 @@ export default function useDataState() {
   const [userData, setUserData] = useState();
   const [isLoggedIn, setIsLoggedIn] = useState();
   const [data, setData] = useState();
+  const [columns, setColumns] = useState();
   const [tableSelected, setTableSelected] = useState("");
   const [selectedItem, setSelectedItem] = useState();
-
   return {
     userData,
     setUserData,
@@ -14,6 +14,8 @@ export default function useDataState() {
     setIsLoggedIn,
     data,
     setData,
+    columns,
+    setColumns,
     tableSelected,
     setTableSelected,
     selectedItem,

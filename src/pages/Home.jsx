@@ -6,14 +6,19 @@ import { useAppContext } from "../context/ContextProvider.jsx";
 import { setBarColor } from "../utils/setBarColor.js";
 import { useEffect } from "react";
 import { student } from "../data/student.js";
+import { columns } from "../data/columns.js";
 
 export default function Home() {
   const navigate = useNavigate();
-  const { setScreen, setData, setTableSelected } = useAppContext();
+  const { setScreen, setData, setTableSelected, setColumns, data } =
+    useAppContext();
   setBarColor("#1d293d");
 
   useEffect(() => {
-    setData({ student });
+    if (!data) {
+      setData({ student });
+      setColumns(columns);
+    }
   }, []);
 
   return (
