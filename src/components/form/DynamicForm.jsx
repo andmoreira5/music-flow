@@ -1,35 +1,66 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useAppContext } from "../../context/ContextProvider.jsx";
 import SendButton from "../button/SendButton.jsx";
+import { toast } from "react-toastify";
+import { validateContact } from "../../utils/validateContact.js";
+import ReturnButton from "../button/ReturnButton.jsx";
 
-export default function DynamicForm() {
-  const { columns, tableSelected, data, setData } = useAppContext();
+export default function DynamicForm({ setSelectedButton }) {
+  const {
+    columns,
+    tableSelected,
+    data,
+    setData,
+    isEditing,
+    setIsEditing,
+    selectedItem,
+  } = useAppContext();
   const [formData, setFormData] = useState({});
+  useEffect(() => {
+    if (isEditing && selectedItem) {
+      setFormData(selectedItem);
+    }
+  }, [isEditing, selectedItem]);
 
   const handleSubmit = (e) => {
     e.preventDefault();
 
+    if (!validateContact(formData.contact)) {
+      toast.error("Número de contato inválido");
+      return;
+    }
+
     const currentArray = data?.[tableSelected] || [];
 
-    const maxId = currentArray.reduce((max, item) => {
-      return item.id > max ? item.id : max;
-    }, 0);
-
-    const newItem = {
+    const updatedItem = {
       ...formData,
-      id: maxId + 1,
       schoolClass: "SEM TURMA",
       photo: (formData.name || "").replace(/ /g, "+"),
     };
 
-    const newArray = [...currentArray, newItem];
+    let newArray;
+
+    if (isEditing) {
+      // Atualização do item existente
+      newArray = currentArray.map((item) =>
+        item.id === selectedItem.id
+          ? { ...updatedItem, id: selectedItem.id }
+          : item
+      );
+    } else {
+      // Adição de novo item
+      const maxId = currentArray.reduce(
+        (max, item) => Math.max(max, item.id || 0),
+        0
+      );
+      updatedItem.id = maxId + 1;
+      newArray = [...currentArray, updatedItem];
+    }
 
     newArray.sort((a, b) => {
       const nameA = (a.name || "").toLowerCase();
       const nameB = (b.name || "").toLowerCase();
-      if (nameA < nameB) return -1;
-      if (nameA > nameB) return 1;
-      return 0;
+      return nameA.localeCompare(nameB);
     });
 
     setData((prevData) => ({
@@ -38,6 +69,14 @@ export default function DynamicForm() {
     }));
 
     setFormData({});
+    setIsEditing(false);
+    setSelectedButton(1);
+
+    toast.success(
+      isEditing
+        ? "Cadastro atualizado com sucesso!"
+        : "Cadastro adicionado com sucesso!"
+    );
   };
 
   function maskPhone(value) {
@@ -89,6 +128,7 @@ export default function DynamicForm() {
           </div>
         );
       })}
+      {isEditing && <ReturnButton onClick={() => setIsEditing(false)} />}
       <SendButton />
     </form>
   );

@@ -4,23 +4,31 @@ import { getUrlPhoto } from "../../data/url.js";
 import { useAppContext } from "../../context/ContextProvider.jsx";
 
 export default function CardPerson({ item, showButtons = true }) {
-  const { tableSelected, setSelectedItem, setVisibleConfirmationScreen } =
-    useAppContext();
+  const {
+    tableSelected,
+    setSelectedItem,
+    setVisibleConfirmationScreen,
+    setIsEditing,
+  } = useAppContext();
   const handleDelete = () => {
     setSelectedItem(item);
     setVisibleConfirmationScreen(true);
   };
+
+  const handleEdit = () => {
+    setSelectedItem(item);
+    setIsEditing(true);
+  };
+
   const renderItem = () => {
-    switch (tableSelected) {
-      default:
-        return (
-          <img
-            src={getUrlPhoto(item?.photo)}
-            alt={item?.name}
-            className="w-full h-full object-cover "
-          />
-        );
-    }
+    return (
+      <img
+        onClick={() => console.log("asd")}
+        src={getUrlPhoto(item?.photo)}
+        alt={item?.name}
+        className="w-full h-full object-cover "
+      />
+    );
   };
   return (
     <div
@@ -45,10 +53,10 @@ export default function CardPerson({ item, showButtons = true }) {
 
       {showButtons && (
         <div className="mr-0 sm:mr-2 flex flex-row sm:flex-col gap-5  ">
-          {/* <ButtonActionItem color={"bg-blue-500"}>
+          <ButtonActionItem color={"bg-blue-500"} onClick={handleEdit}>
             <FaPencilAlt size={20} color="white" />
             <span>Editar</span>
-          </ButtonActionItem> */}
+          </ButtonActionItem>
           {tableSelected == "localidade" && item.id == 1 ? (
             <></>
           ) : (
