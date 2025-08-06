@@ -5,7 +5,6 @@ import CardPerson from "../card/CardPerson.jsx";
 
 export default function ConfirmationModal() {
   const {
-    data,
     setData,
     visibleConfirmationScreen,
     setVisibleConfirmationScreen,
@@ -22,6 +21,7 @@ export default function ConfirmationModal() {
       ),
     }));
     setVisibleConfirmationScreen(false);
+    toast.success("Removido com sucesso!");
   }
 
   return (

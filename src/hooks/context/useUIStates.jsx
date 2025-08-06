@@ -7,6 +7,7 @@ export function useUIStates() {
   const [visibleConfirmationScreen, setVisibleConfirmationScreen] =
     useState(false);
   const [screen, setScreen] = useState({ title: "HOME" });
+  const [isEditing, setIsEditing] = useState(false);
 
   return {
     isDarkMode,
@@ -15,5 +16,7 @@ export function useUIStates() {
     setScreen,
     visibleConfirmationScreen,
     setVisibleConfirmationScreen,
+    isEditing,
+    setIsEditing,
   };
 }
