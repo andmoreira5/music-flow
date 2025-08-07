@@ -9,6 +9,7 @@ export default function CardPerson({ item, showButtons = true }) {
     setSelectedItem,
     setVisibleConfirmationScreen,
     setIsEditing,
+    setSelectedButtonManageRegistrations,
   } = useAppContext();
   const handleDelete = () => {
     setSelectedItem(item);
@@ -18,12 +19,19 @@ export default function CardPerson({ item, showButtons = true }) {
   const handleEdit = () => {
     setSelectedItem(item);
     setIsEditing(true);
+    setSelectedButtonManageRegistrations(2);
+  };
+
+  const handleView = () => {
+    setSelectedItem(item);
+    setIsEditing(false);
+    setSelectedButtonManageRegistrations(2);
   };
 
   const renderItem = () => {
     return (
       <img
-        onClick={() => console.log("asd")}
+        onClick={handleView}
         src={getUrlPhoto(item?.photo)}
         alt={item?.name}
         className="w-full h-full object-cover "

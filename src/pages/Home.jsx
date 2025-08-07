@@ -7,6 +7,8 @@ import { setBarColor } from "../utils/setBarColor.js";
 import { useEffect } from "react";
 import { student } from "../data/student.js";
 import { columns } from "../data/columns.js";
+import { professor } from "../data/professor.js";
+import { course } from "../data/course.js";
 
 export default function Home() {
   const navigate = useNavigate();
@@ -16,7 +18,7 @@ export default function Home() {
 
   useEffect(() => {
     if (!data) {
-      setData({ student });
+      setData({ student, professor, course });
       setColumns(columns);
     }
   }, []);

@@ -5,7 +5,7 @@ import { toast } from "react-toastify";
 import { validateContact } from "../../utils/validateContact.js";
 import ReturnButton from "../button/ReturnButton.jsx";
 
-export default function DynamicForm({ setSelectedButton }) {
+export default function DynamicForm() {
   const {
     columns,
     tableSelected,
@@ -14,13 +14,12 @@ export default function DynamicForm({ setSelectedButton }) {
     isEditing,
     setIsEditing,
     selectedItem,
+    setSelectedButtonManageRegistrations,
   } = useAppContext();
   const [formData, setFormData] = useState({});
   useEffect(() => {
-    if (isEditing && selectedItem) {
-      setFormData(selectedItem);
-    }
-  }, [isEditing, selectedItem]);
+    selectedItem && setFormData(selectedItem);
+  }, [selectedItem]);
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -41,14 +40,12 @@ export default function DynamicForm({ setSelectedButton }) {
     let newArray;
 
     if (isEditing) {
-      // Atualização do item existente
       newArray = currentArray.map((item) =>
         item.id === selectedItem.id
           ? { ...updatedItem, id: selectedItem.id }
           : item
       );
     } else {
-      // Adição de novo item
       const maxId = currentArray.reduce(
         (max, item) => Math.max(max, item.id || 0),
         0
@@ -70,13 +67,17 @@ export default function DynamicForm({ setSelectedButton }) {
 
     setFormData({});
     setIsEditing(false);
-    setSelectedButton(1);
+    setSelectedButtonManageRegistrations(1);
 
     toast.success(
       isEditing
         ? "Cadastro atualizado com sucesso!"
         : "Cadastro adicionado com sucesso!"
     );
+  };
+  const handleReturn = () => {
+    setIsEditing(false);
+    setSelectedButtonManageRegistrations(1);
   };
 
   function maskPhone(value) {
@@ -108,28 +109,30 @@ export default function DynamicForm({ setSelectedButton }) {
   const items = columns?.[tableSelected] || [];
 
   return (
-    <form onSubmit={handleSubmit} className="grid sm:grid-cols-2 gap-5">
-      {items.map((column, index) => {
-        const field = column.field;
+    <>
+      <form onSubmit={handleSubmit} className="grid sm:grid-cols-2 gap-5">
+        {items.map((column, index) => {
+          const field = column.field;
 
-        return (
-          <div key={index} className="mb-5 bg-gray-700 p-3 rounded-sm">
-            <label className="text-gray-300 font-bold">
-              {column.name + (column.required ? " (Obrigatório)" : "")}
-              <input
-                type={column.type || "text"}
-                name={field}
-                required={column.required || false}
-                value={formData[field] || ""}
-                onChange={handleChange}
-                className="block w-full p-2 mt-1 bg-gray-300 rounded-sm text-black font-normal"
-              />
-            </label>
-          </div>
-        );
-      })}
-      {isEditing && <ReturnButton onClick={() => setIsEditing(false)} />}
-      <SendButton />
-    </form>
+          return (
+            <div key={index} className="mb-5 bg-gray-700 p-3 rounded-sm">
+              <label className="text-gray-300 font-bold">
+                {column.name + (column.required ? " (Obrigatório)" : "")}
+                <input
+                  type={column.type || "text"}
+                  name={field}
+                  required={column.required || false}
+                  value={formData[field] || ""}
+                  onChange={handleChange}
+                  className="block w-full p-2 mt-1 bg-gray-300 rounded-sm text-black font-normal"
+                />
+              </label>
+            </div>
+          );
+        })}
+        {(isEditing || !selectedItem) && <SendButton />}
+        {selectedItem && <ReturnButton onClick={handleReturn} />}
+      </form>
+    </>
   );
 }

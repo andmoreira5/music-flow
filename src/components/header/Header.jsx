@@ -30,7 +30,7 @@ export default function Header() {
     >
       <LogoutButton />
       <div
-        className={`  dark:text-white  text-sky-200  text-center  items-center flex flex-col justify-center `}
+        className={`  dark:text-white  text-sky-800  text-center  items-center flex flex-col justify-center `}
       >
         <h1 className="font-bold text-[1.15rem] md:text-2xl mb-2">
           {screen.title == "HOME"

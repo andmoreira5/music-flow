@@ -8,6 +8,10 @@ export function useUIStates() {
     useState(false);
   const [screen, setScreen] = useState({ title: "HOME" });
   const [isEditing, setIsEditing] = useState(false);
+  const [
+    selectedButtonManageRegistrations,
+    setSelectedButtonManageRegistrations,
+  ] = useState(1);
 
   return {
     isDarkMode,
@@ -18,5 +22,7 @@ export function useUIStates() {
     setVisibleConfirmationScreen,
     isEditing,
     setIsEditing,
+    selectedButtonManageRegistrations,
+    setSelectedButtonManageRegistrations,
   };
 }
