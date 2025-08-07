@@ -13,7 +13,6 @@ export default function ConfirmationModal() {
   } = useAppContext();
 
   async function confirmAction() {
-    console.log(selectedItem);
     setData((prevState) => ({
       ...prevState,
       [tableSelected]: prevState[tableSelected].filter(

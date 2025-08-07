@@ -1,4 +1,4 @@
-import { FaUserGraduate } from "react-icons/fa";
+import { FaChalkboardTeacher, FaUserGraduate } from "react-icons/fa";
 
 export const menuButton = {
   registration: [
@@ -9,6 +9,14 @@ export const menuButton = {
       property: "student",
       navigation: "/manageRegistrations",
       title: "GERENCIAR ALUNOS",
+    },
+    {
+      label: "Professores",
+      icon: FaChalkboardTeacher,
+      color: "bg-green-800",
+      property: "professor",
+      navigation: "/manageRegistrations",
+      title: "GERENCIAR PROFESSORES",
     },
   ],
 };

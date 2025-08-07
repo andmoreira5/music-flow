@@ -4,6 +4,7 @@ export default function SendButton({ onClick }) {
   return (
     <div className="w-full justify-center flex mt-4 gap-5">
       <button
+        data-testid="button-SendButton"
         onClick={onClick}
         type="submit"
         className="fixed bottom-6 right-6 bg-green-600 hover:bg-green-700 z-50

@@ -9,6 +9,7 @@ export default function GoToHome() {
 
   return (
     <button
+      data-testid="button-GoToHome"
       onClick={() => {
         setScreen({ title: "HOME", color: "bg-slate-800" });
         setBarColor("#1d293d");
