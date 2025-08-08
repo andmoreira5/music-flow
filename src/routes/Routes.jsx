@@ -3,6 +3,7 @@ import Login from "../pages/Login.jsx";
 import ProtectedRoute from "./ProtectedRoute.jsx";
 import Home from "../pages/Home.jsx";
 import ManageRegistrations from "../pages/ManageRegistrations.jsx";
+import ManageClasses from "../pages/ManageClasses.jsx";
 
 export default function MyRoutes() {
   return (
@@ -24,6 +25,14 @@ export default function MyRoutes() {
           element={
             <ProtectedRoute>
               <ManageRegistrations />
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path={"/manageClasses"}
+          element={
+            <ProtectedRoute>
+              <ManageClasses />
             </ProtectedRoute>
           }
         />

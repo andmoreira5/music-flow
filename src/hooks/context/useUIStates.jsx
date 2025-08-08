@@ -8,10 +8,13 @@ export function useUIStates() {
     useState(false);
   const [screen, setScreen] = useState({ title: "HOME" });
   const [isEditing, setIsEditing] = useState(false);
+  const [isEditingClass, setIsEditingClass] = useState(false);
   const [
     selectedButtonManageRegistrations,
     setSelectedButtonManageRegistrations,
   ] = useState(1);
+  const [selectedButtonManageClasses, setSelectedButtonManageClasses] =
+    useState(1);
 
   return {
     isDarkMode,
@@ -24,5 +27,9 @@ export function useUIStates() {
     setIsEditing,
     selectedButtonManageRegistrations,
     setSelectedButtonManageRegistrations,
+    selectedButtonManageClasses,
+    setSelectedButtonManageClasses,
+    isEditingClass,
+    setIsEditingClass,
   };
 }
