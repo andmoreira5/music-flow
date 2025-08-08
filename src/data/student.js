@@ -6,7 +6,6 @@ export const student = [
     photo: "ANA+SOUZA",
     address: "RUA DAS FLORES, 123 - SÃO PAULO, SP",
     contact: "(11) 91234-5678",
-    schoolClass: "SEM TURMA",
   },
   {
     id: 2,
@@ -15,7 +14,6 @@ export const student = [
     photo: "BRUNO+OLIVEIRA",
     address: "AV. BRASIL, 456 - RIO DE JANEIRO, RJ",
     contact: "(21) 99876-5432",
-    schoolClass: "SEM TURMA",
   },
   {
     id: 3,
@@ -24,7 +22,6 @@ export const student = [
     photo: "CARLA+LIMA",
     address: "RUA CENTRAL, 99 - BELO HORIZONTE, MG",
     contact: "(31) 98562-3011",
-    schoolClass: "SEM TURMA",
   },
   {
     id: 4,
@@ -33,7 +30,6 @@ export const student = [
     photo: "DIEGO+MARTINS",
     address: "RUA 7 DE SETEMBRO, 321 - CURITIBA, PR",
     contact: "(41) 97654-1221",
-    schoolClass: "SEM TURMA",
   },
   {
     id: 5,
@@ -42,7 +38,6 @@ export const student = [
     photo: "EDUARDA+FERNANDES",
     address: "ALAMEDA SANTOS, 700 - SÃO PAULO, SP",
     contact: "(11) 95555-8899",
-    schoolClass: "SEM TURMA",
   },
   {
     id: 6,
@@ -51,7 +46,6 @@ export const student = [
     photo: "FELIPE+ROCHA",
     address: "RUA DO COMÉRCIO, 12 - SALVADOR, BA",
     contact: "(71) 93456-7821",
-    schoolClass: "SEM TURMA",
   },
   {
     id: 7,
@@ -60,7 +54,6 @@ export const student = [
     photo: "GIOVANA+TEIXEIRA",
     address: "RUA VITÓRIA, 45 - FORTALEZA, CE",
     contact: "(85) 98888-1122",
-    schoolClass: "SEM TURMA",
   },
   {
     id: 8,
@@ -69,7 +62,6 @@ export const student = [
     photo: "HENRIQUE+DIAS",
     address: "AV. DAS AMÉRICAS, 500 - BRASÍLIA, DF",
     contact: "(61) 97666-3344",
-    schoolClass: "SEM TURMA",
   },
   {
     id: 9,
@@ -78,7 +70,6 @@ export const student = [
     photo: "ISABELA+SANTOS",
     address: "RUA AURORA, 80 - RECIFE, PE",
     contact: "(81) 93222-4567",
-    schoolClass: "SEM TURMA",
   },
   {
     id: 10,
@@ -87,6 +78,5 @@ export const student = [
     photo: "JOÃO+PEDRO+ALMEIDA",
     address: "RUA DAS PALMEIRAS, 65 - PORTO ALEGRE, RS",
     contact: "(51) 97878-9988",
-    schoolClass: "SEM TURMA",
   },
 ];

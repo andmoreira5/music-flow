@@ -3,7 +3,7 @@ import ButtonActionItem from "../button/ButtonActionItem.jsx";
 import { getUrlPhoto } from "../../data/url.js";
 import { useAppContext } from "../../context/ContextProvider.jsx";
 
-export default function CardPerson({ item, showButtons = true }) {
+export default function CardClass({ item, showButtons = true }) {
   const {
     tableSelected,
     setSelectedItem,

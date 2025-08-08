@@ -6,7 +6,6 @@ export const professor = [
     photo: "CARLOS+MENDES",
     address: "AV. BRASIL, 456 - RIO DE JANEIRO, RJ",
     contact: "(21) 99876-5432",
-    schoolClass: "SEM TURMA",
   },
   {
     id: 2,
@@ -15,7 +14,6 @@ export const professor = [
     photo: "FERNANDA+LIMA",
     address: "RUA DA PAZ, 789 - BELO HORIZONTE, MG",
     contact: "(31) 91234-0000",
-    schoolClass: "SEM TURMA",
   },
   {
     id: 3,
@@ -24,7 +22,6 @@ export const professor = [
     photo: "ROBERTO+NUNES",
     address: "RUA CENTRAL, 321 - CURITIBA, PR",
     contact: "(41) 98765-4321",
-    schoolClass: "SEM TURMA",
   },
   {
     id: 4,
@@ -33,6 +30,5 @@ export const professor = [
     photo: "JULIANA+ROCHA",
     address: "AV. DAS AMÉRICAS, 654 - SALVADOR, BA",
     contact: "(71) 93456-7890",
-    schoolClass: "SEM TURMA",
   },
 ];

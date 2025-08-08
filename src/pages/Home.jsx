@@ -14,6 +14,7 @@ export default function Home() {
   const navigate = useNavigate();
   const { setScreen, setData, setTableSelected, setColumns, data } =
     useAppContext();
+
   setBarColor("#1d293d");
 
   useEffect(() => {
@@ -23,18 +24,29 @@ export default function Home() {
     }
   }, []);
 
+  const sections = [
+    { title: "GESTÃO DE CADASTROS", items: menuButton.registration },
+    { title: "GESTÃO DE TURMAS", items: menuButton.classes },
+  ];
+
+  const attachOnClick = (el) => ({
+    ...el,
+    onClick: () => {
+      setTableSelected(el.property);
+      setScreen({ title: el.title, color: el.color });
+      navigate(el.navigation);
+    },
+  });
+
   return (
-    <div className="m-6">
-      <Section title="GESTÃO DE CADASTROS">
-        {menuButton.registration.map((el, index) => {
-          el.onClick = () => {
-            setTableSelected(el.property);
-            setScreen({ title: el.title, color: el.color });
-            navigate(el.navigation);
-          };
-          return <ButtonMenuWithIcon item={el} key={index} />;
-        })}
-      </Section>
+    <div className="m-6 gap-5 flex flex-col">
+      {sections.map((section, i) => (
+        <Section title={section.title} key={i}>
+          {section.items.map((el, index) => (
+            <ButtonMenuWithIcon key={index} item={attachOnClick(el)} />
+          ))}
+        </Section>
+      ))}
     </div>
   );
 }

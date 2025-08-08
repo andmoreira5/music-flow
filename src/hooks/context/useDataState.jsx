@@ -7,6 +7,9 @@ export default function useDataState() {
   const [columns, setColumns] = useState();
   const [tableSelected, setTableSelected] = useState("");
   const [selectedItem, setSelectedItem] = useState();
+  const [selectedClass, setSelectedClass] = useState();
+  const [classes, setClasses] = useState([]);
+
   return {
     userData,
     setUserData,
@@ -20,5 +23,9 @@ export default function useDataState() {
     setTableSelected,
     selectedItem,
     setSelectedItem,
+    classes,
+    setClasses,
+    selectedClass,
+    setSelectedClass,
   };
 }

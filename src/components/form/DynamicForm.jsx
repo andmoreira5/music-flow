@@ -33,7 +33,6 @@ export default function DynamicForm() {
 
     const updatedItem = {
       ...formData,
-      schoolClass: "SEM TURMA",
       photo: (formData.name || "").replace(/ /g, "+"),
     };
 
