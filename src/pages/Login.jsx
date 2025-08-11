@@ -116,9 +116,7 @@ export default function Login() {
             Login
           </button>
         )}
-        <div className="bg-yellow-600 text-white font-bold rounded mt-10 p-2 text-center cursor-pointer">
-          Esqueci a senha
-        </div>
+
         <p className="text-center text-gray-300 mt-3 -mb-3">Versão {version}</p>
       </div>
     </div>

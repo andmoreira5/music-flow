@@ -1,6 +1,5 @@
 import { FaPencilAlt, FaTrashAlt } from "react-icons/fa";
 import ButtonActionItem from "../button/ButtonActionItem.jsx";
-import { getUrlPhoto } from "../../data/url.js";
 import { useAppContext } from "../../context/ContextProvider.jsx";
 
 export default function CardClass({ item, showButtons = true }) {
@@ -11,10 +10,12 @@ export default function CardClass({ item, showButtons = true }) {
     setIsEditing,
     setSelectedButtonManageRegistrations,
   } = useAppContext();
+  const IconComponent = item?.icon;
   const handleDelete = () => {
     setSelectedItem(item);
     setVisibleConfirmationScreen(true);
   };
+  console.log(item.icon);
 
   const handleEdit = () => {
     setSelectedItem(item);
@@ -27,35 +28,29 @@ export default function CardClass({ item, showButtons = true }) {
     setIsEditing(false);
     setSelectedButtonManageRegistrations(2);
   };
-
-  const renderItem = () => {
-    return (
-      <img
-        onClick={handleView}
-        src={getUrlPhoto(item?.photo)}
-        alt={item?.name}
-        className="w-full h-full object-cover "
-      />
-    );
-  };
+  console.log(item);
   return (
     <div
-      className="bg-gray-800 relative rounded-lg shadow-md p-4 
+      className="bg-gray-800 relative rounded-lg shadow-md p-4  overflow-hidden
         flex flex-col md:flex-row items-center text-white gap-4"
     >
-      <div className="flex flex-row justify-around w-full">
+      {IconComponent && (
         <div
-          className="cursor-pointer flex-shrink-0 w-24 h-24 rounded-full 
-          overflow-hidden border-4 border-white"
+          className="absolute top-[-40px] left-[-10px] text-[200px] 
+      text-white opacity-10 pointer-events-none select-none"
+          aria-hidden="true"
         >
-          {renderItem()}
+          <IconComponent />
         </div>
+      )}
+
+      <div className="flex flex-row justify-around w-full">
         <div className="ml-4 flex-1">
-          <h2 className="text-lg font-bold">{item?.name?.toUpperCase()}</h2>
+          <h2 className="text-lg font-bold">{item?.course?.toUpperCase()}</h2>
           <div className="pl-1">
-            <p className="text-sm opacity-70">{item?.address}</p>
+            <p className="text-sm opacity-70">{item?.time}</p>
             <p className="text-sm opacity-70">
-              {item?.schoolClass || "SEM TURMA"}
+              {item?.students?.length} ALUNO(S) MATRICULADO(S)
             </p>
           </div>
         </div>

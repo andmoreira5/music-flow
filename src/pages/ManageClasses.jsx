@@ -2,6 +2,7 @@ import { useAppContext } from "../context/ContextProvider.jsx";
 import ConfirmationModal from "../components/confirmation modal/ConfirmationModal.jsx";
 import HeaderTotal from "../components/header total/HeaderTotal.jsx";
 import AddClass from "../components/add class/AddClass.jsx";
+import ListItemsManageClasses from "../components/list/ListItemsManageClasses.jsx";
 
 export default function ManageClasses() {
   const {
@@ -15,7 +16,7 @@ export default function ManageClasses() {
   const showComponent = () => {
     switch (selectedButtonManageClasses) {
       case 1: //view
-        return <></>;
+        return <ListItemsManageClasses />;
       case 2: //add
         return <AddClass />;
     }

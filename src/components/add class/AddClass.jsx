@@ -5,10 +5,12 @@ import { useAppContext } from "../../context/ContextProvider.jsx";
 import { getUrlPhoto } from "../../data/url.js";
 import { formatBirthDate } from "../../utils/formatBirthDate.js";
 import CardPerson from "../../components/card/CardPerson.jsx";
+import SendButton from "../button/SendButton.jsx";
+import { toast } from "react-toastify";
 
 export default function AddClass() {
   const [formData, setFormData] = useState({
-    courseId: course[0]?.id || "",
+    course: course[0]?.id || "",
     weekDay: weekDays[0]?.id || "",
     time: "",
   });
@@ -20,7 +22,7 @@ export default function AddClass() {
   const [selectedStudents, setSelectedStudents] = useState([]);
   const [selectedProfessors, setSelectedProfessors] = useState([]);
 
-  const { data } = useAppContext();
+  const { data, setClasses, setSelectedButtonManageClasses } = useAppContext();
 
   function handleChange(e) {
     setFormData({
@@ -31,12 +33,35 @@ export default function AddClass() {
 
   function handleSubmit(e) {
     e.preventDefault();
-    console.log("Turma criada:", formData);
-    console.log("Alunos:", selectedStudents);
-    console.log("Professores:", selectedProfessors);
-  }
 
-  console.log(selectedStudents);
+    const time = formData.time;
+    if (!time || time.trim() === "") {
+      toast.error("O campo 'horário' não pode ficar vazio.");
+      return;
+    }
+
+    const timePattern = /^([01]\d|2[0-3]):([0-5]\d)$/;
+
+    if (!timePattern.test(time)) {
+      alert("O campo 'horário' deve estar no formato válido HH:MM.");
+      return;
+    }
+    const courseObj = course.find((el) => el.id == formData.course);
+    const weekDayObj = weekDays.find((el) => el.id == formData.weekDay);
+
+    const newClass = {
+      course: courseObj ? courseObj.name : "Não encontrado",
+      icon: courseObj ? courseObj.icon : "",
+      weekDay: weekDayObj ? weekDayObj.name : "Não encontrado",
+      time: formData.time,
+      students: selectedStudents,
+      professors: selectedProfessors,
+    };
+
+    setClasses((prevClasses) => [...prevClasses, newClass]);
+    toast.success("Turma adicionada com sucesso!");
+    setSelectedButtonManageClasses(1);
+  }
 
   function handleAddPerson(item) {
     if (mode === "student") {
@@ -76,8 +101,8 @@ export default function AddClass() {
         <div className="mb-5">
           <label className="text-gray-300 font-bold block mb-1">Curso</label>
           <select
-            name="courseId"
-            value={formData.courseId}
+            name="course"
+            value={formData.course}
             onChange={handleChange}
             required
             className="block w-full p-2 bg-gray-300 rounded-sm text-black font-normal"
@@ -121,6 +146,7 @@ export default function AddClass() {
           />
         </div>
       </form>
+      <SendButton onClick={handleSubmit} />
 
       <div className="mt-8 text-center">
         <span className="text-gray-300 font-bold mr-4">Modo de inserção:</span>
@@ -147,7 +173,7 @@ export default function AddClass() {
       <div className="mt-6 flex justify-center">
         <input
           type="text"
-          placeholder={`Buscar ${
+          placeholder={`Adicionar ${
             mode === "student" ? "aluno" : "professor"
           }...`}
           value={search}
@@ -188,7 +214,7 @@ export default function AddClass() {
             </h2>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
               {selectedProfessors.map((prof) => (
-                <CardPerson key={prof.id} person={prof} showButtons={false} />
+                <CardPerson key={prof.id} item={prof} showButtons={false} />
               ))}
             </div>
           </div>
@@ -202,8 +228,8 @@ export default function AddClass() {
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
               {selectedStudents.map((student) => (
                 <CardPerson
+                  item={student}
                   key={student.id}
-                  person={student}
                   showButtons={false}
                 />
               ))}

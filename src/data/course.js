@@ -1,4 +1,5 @@
 import { FaGuitar, FaDrum, FaMicrophone, FaKeyboard } from "react-icons/fa";
+import { GiPianoKeys } from "react-icons/gi";
 
 export const course = [
   {
@@ -19,6 +20,6 @@ export const course = [
   {
     id: 4,
     name: "TECLADO",
-    icon: FaKeyboard,
+    icon: GiPianoKeys,
   },
 ];
