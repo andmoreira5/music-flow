@@ -22,7 +22,8 @@ export default function AddClass() {
   const [selectedStudents, setSelectedStudents] = useState([]);
   const [selectedProfessors, setSelectedProfessors] = useState([]);
 
-  const { data, setClasses, setSelectedButtonManageClasses } = useAppContext();
+  const { data, setClasses, setSelectedButtonManageClasses, selectedItem } =
+    useAppContext();
 
   function handleChange(e) {
     setFormData({
@@ -49,16 +50,27 @@ export default function AddClass() {
     const courseObj = course.find((el) => el.id == formData.course);
     const weekDayObj = weekDays.find((el) => el.id == formData.weekDay);
 
-    const newClass = {
-      course: courseObj ? courseObj.name : "Não encontrado",
-      icon: courseObj ? courseObj.icon : "",
-      weekDay: weekDayObj ? weekDayObj.name : "Não encontrado",
-      time: formData.time,
-      students: selectedStudents,
-      professors: selectedProfessors,
-    };
+    setClasses((prevClasses) => {
+      const nextId =
+        prevClasses.length > 0
+          ? Math.max(...prevClasses.map((c) => c.id)) + 1
+          : 1;
 
-    setClasses((prevClasses) => [...prevClasses, newClass]);
+      const baseData = {
+        id: selectedItem ? selectedItem.id : nextId,
+        course: courseObj?.name || "Não encontrado",
+        icon: courseObj?.icon || "",
+        weekDay: weekDayObj?.name || "Não encontrado",
+        time: formData.time,
+        students: selectedStudents,
+        professors: selectedProfessors,
+      };
+
+      return selectedItem
+        ? prevClasses.map((c) => (c.id === selectedItem.id ? baseData : c))
+        : [...prevClasses, baseData];
+    });
+
     toast.success("Turma adicionada com sucesso!");
     setSelectedButtonManageClasses(1);
   }
@@ -76,6 +88,14 @@ export default function AddClass() {
     setSearch("");
     setResults([]);
   }
+
+  useEffect(() => {
+    if (selectedItem) {
+      console.log(selectedItem);
+      setSelectedStudents(selectedItem.students);
+      setSelectedProfessors(selectedItem.professors);
+    }
+  }, []);
 
   useEffect(() => {
     const list = mode === "student" ? data?.student : data?.professor;
@@ -207,13 +227,13 @@ export default function AddClass() {
       )}
 
       <div className="mt-10">
-        {selectedProfessors.length > 0 && (
+        {selectedProfessors?.length > 0 && (
           <div className="mb-6">
             <h2 className="text-gray-300 font-bold text-lg mb-2">
               Professores Selecionados
             </h2>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-              {selectedProfessors.map((prof) => (
+              {selectedProfessors?.map((prof) => (
                 <CardPerson key={prof.id} item={prof} showButtons={false} />
               ))}
             </div>

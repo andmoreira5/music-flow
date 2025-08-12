@@ -3,7 +3,11 @@ import ButtonActionItem from "../button/ButtonActionItem.jsx";
 import { getUrlPhoto } from "../../data/url.js";
 import { useAppContext } from "../../context/ContextProvider.jsx";
 
-export default function CardPerson({ item, showButtons = true }) {
+export default function CardPerson({
+  item,
+  showButtons = true,
+  showDelete = false,
+}) {
   const {
     tableSelected,
     setSelectedItem,
@@ -75,6 +79,11 @@ export default function CardPerson({ item, showButtons = true }) {
               <span>Excluir</span>
             </ButtonActionItem>
           )}
+        </div>
+      )}
+      {showDelete && (
+        <div className="absolute bg-red-800 -right-3 -top-3 p-3 rounded-3xl border-2 border-white ">
+          <FaTrashAlt />
         </div>
       )}
     </div>

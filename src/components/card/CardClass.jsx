@@ -4,31 +4,23 @@ import { useAppContext } from "../../context/ContextProvider.jsx";
 
 export default function CardClass({ item, showButtons = true }) {
   const {
-    tableSelected,
     setSelectedItem,
     setVisibleConfirmationScreen,
     setIsEditing,
-    setSelectedButtonManageRegistrations,
+    setSelectedButtonManageClasses,
   } = useAppContext();
   const IconComponent = item?.icon;
   const handleDelete = () => {
     setSelectedItem(item);
     setVisibleConfirmationScreen(true);
   };
-  console.log(item.icon);
 
   const handleEdit = () => {
     setSelectedItem(item);
     setIsEditing(true);
-    setSelectedButtonManageRegistrations(2);
+    setSelectedButtonManageClasses(2);
   };
 
-  const handleView = () => {
-    setSelectedItem(item);
-    setIsEditing(false);
-    setSelectedButtonManageRegistrations(2);
-  };
-  console.log(item);
   return (
     <div
       className="bg-gray-800 relative rounded-lg shadow-md p-4  overflow-hidden
@@ -62,14 +54,11 @@ export default function CardClass({ item, showButtons = true }) {
             <FaPencilAlt size={20} color="white" />
             <span>Editar</span>
           </ButtonActionItem>
-          {tableSelected == "localidade" && item.id == 1 ? (
-            <></>
-          ) : (
-            <ButtonActionItem color={"bg-red-500"} onClick={handleDelete}>
-              <FaTrashAlt size={20} color="white" />
-              <span>Excluir</span>
-            </ButtonActionItem>
-          )}
+
+          <ButtonActionItem color={"bg-red-500"} onClick={handleDelete}>
+            <FaTrashAlt size={20} color="white" />
+            <span>Excluir</span>
+          </ButtonActionItem>
         </div>
       )}
     </div>

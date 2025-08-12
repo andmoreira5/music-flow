@@ -1,4 +1,4 @@
-import { FaGuitar, FaDrum, FaMicrophone, FaKeyboard } from "react-icons/fa";
+import { FaGuitar, FaDrum, FaMicrophone } from "react-icons/fa";
 import { GiPianoKeys } from "react-icons/gi";
 
 export const course = [

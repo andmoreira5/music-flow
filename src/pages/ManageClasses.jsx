@@ -8,7 +8,6 @@ export default function ManageClasses() {
   const {
     classes,
     isEditingClass,
-    setSelectedClass,
     selectedButtonManageClasses,
     setSelectedButtonManageClasses,
   } = useAppContext();
@@ -31,12 +30,8 @@ export default function ManageClasses() {
             array={classes}
             selected={selectedButtonManageClasses}
             setSelected={setSelectedButtonManageClasses}
-            setItemSelected={setSelectedClass}
             subtitle="TURMA(S)"
           />
-          <span className="w-full justify-center flex mb-5 dark:text-gray-300 text-gray-700 -mt-1 sm:-mt-12">
-            Clique na foto para visualizar o cadastro
-          </span>
         </>
       )}
       {showComponent()}

@@ -2,23 +2,35 @@ import { toast } from "react-toastify";
 import { FaCheckCircle, FaTimesCircle } from "react-icons/fa";
 import { useAppContext } from "../../context/ContextProvider.jsx";
 import CardPerson from "../card/CardPerson.jsx";
+import { useLocation } from "react-router-dom";
+import CardClass from "../card/CardClass.jsx";
 
 export default function ConfirmationModal() {
   const {
     setData,
+    setClasses,
     visibleConfirmationScreen,
     setVisibleConfirmationScreen,
     tableSelected,
     selectedItem,
   } = useAppContext();
+  const location = useLocation();
 
   async function confirmAction() {
-    setData((prevState) => ({
-      ...prevState,
-      [tableSelected]: prevState[tableSelected].filter(
-        (el) => el.id != selectedItem.id
-      ),
-    }));
+    if (location.pathname.includes("manageClasses")) {
+      console.log("selectedItem");
+      console.log(selectedItem);
+      setClasses((prevState) =>
+        prevState.filter((el) => el.id != selectedItem.id)
+      );
+    } else {
+      setData((prevState) => ({
+        ...prevState,
+        [tableSelected]: prevState[tableSelected].filter(
+          (el) => el.id != selectedItem.id
+        ),
+      }));
+    }
     setVisibleConfirmationScreen(false);
     toast.success("Removido com sucesso!");
   }
@@ -50,8 +62,11 @@ export default function ConfirmationModal() {
         >
           CONFIRMAR EXCLUSÃO?
         </div>
-
-        <CardPerson index={1000} item={selectedItem} showButtons={false} />
+        {location.pathname.includes("manageClasses") ? (
+          <CardClass index={1000} item={selectedItem} showButtons={false} />
+        ) : (
+          <CardPerson index={1000} item={selectedItem} showButtons={false} />
+        )}
         <div className="flex justify-around mt-7">
           <button
             className=" font-bold flex items-center justify-center px-4 py-2 min-w-30 w-2/5

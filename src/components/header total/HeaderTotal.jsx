@@ -1,14 +1,15 @@
 import { FaList, FaPlus } from "react-icons/fa";
 import IconCircleButton from "../button/IconCircleButton.jsx";
 import Total from "../card/Total.jsx";
+import { useAppContext } from "../../context/ContextProvider.jsx";
 
 export default function HeaderTotal({
   array,
   selected,
   setSelected,
-  setItemSelected,
   subtitle,
 }) {
+  const { setSelectedItem } = useAppContext();
   return (
     <div className="flex flex-row w-full justify-between mb-5 text-white ">
       <Total quantity={array?.length} subtitle={subtitle} />
@@ -27,7 +28,7 @@ export default function HeaderTotal({
           selected={selected == 2}
           label="Adicionar"
           onClick={() => {
-            setItemSelected(null);
+            setSelectedItem(null);
             setSelected(2);
           }}
         >
