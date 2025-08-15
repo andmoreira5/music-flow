@@ -58,9 +58,6 @@ export default function CardPerson({
           <h2 className="text-lg font-bold">{item?.name?.toUpperCase()}</h2>
           <div className="pl-1">
             <p className="text-sm opacity-70">{item?.address}</p>
-            <p className="text-sm opacity-70">
-              {item?.schoolClass || "SEM TURMA"}
-            </p>
           </div>
         </div>
       </div>

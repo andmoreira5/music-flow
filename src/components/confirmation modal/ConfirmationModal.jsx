@@ -18,8 +18,6 @@ export default function ConfirmationModal() {
 
   async function confirmAction() {
     if (location.pathname.includes("manageClasses")) {
-      console.log("selectedItem");
-      console.log(selectedItem);
       setClasses((prevState) =>
         prevState.filter((el) => el.id != selectedItem.id)
       );

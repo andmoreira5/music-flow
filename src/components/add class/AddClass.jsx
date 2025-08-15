@@ -59,6 +59,8 @@ export default function AddClass() {
       const baseData = {
         id: selectedItem ? selectedItem.id : nextId,
         course: courseObj?.name || "Não encontrado",
+        courseId: formData.course,
+        weekDayId: formData.weekDay,
         icon: courseObj?.icon || "",
         weekDay: weekDayObj?.name || "Não encontrado",
         time: formData.time,
@@ -91,11 +93,15 @@ export default function AddClass() {
 
   useEffect(() => {
     if (selectedItem) {
-      console.log(selectedItem);
       setSelectedStudents(selectedItem.students);
       setSelectedProfessors(selectedItem.professors);
+      setFormData({
+        course: selectedItem.courseId || "",
+        time: selectedItem.time || "",
+        weekDay: selectedItem.weekDayId || "",
+      });
     }
-  }, []);
+  }, [selectedItem]);
 
   useEffect(() => {
     const list = mode === "student" ? data?.student : data?.professor;
