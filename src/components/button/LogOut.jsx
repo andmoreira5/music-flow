@@ -7,6 +7,7 @@ const LogoutButton = () => {
 
   return (
     <button
+      data-testid="logoutButton"
       onClick={handleLogout}
       className=" bg-red-500 border-2 border-white justify-center 
       rounded-md px-2 h-16 md:px-4 py-1 md:py-2 flex flex-col items-center cursor-pointer"

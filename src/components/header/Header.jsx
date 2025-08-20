@@ -47,6 +47,7 @@ export default function Header() {
             px-1 md:px-4 h-16 border-2 rounded py-1 border-white "
         >
           <DarkModeSwitch
+            data-testid="darkModeSwitch"
             sunColor="#FC0 "
             checked={isDarkMode}
             onChange={toggleDarkMode}

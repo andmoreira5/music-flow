@@ -35,5 +35,14 @@ export default [
         { allowConstantExport: true },
       ],
     },
+    overrides: [
+      {
+        files: ["cypress/**/*.cy.js", "cypress/**/*.spec.js"],
+        env: {
+          "cypress/globals": true,
+        },
+        plugins: ["cypress"],
+      },
+    ],
   },
 ];

@@ -35,6 +35,7 @@ This project manages classes in a music school, allowing you to organize student
 - Context API
 - Vitest
 - Testing Library
+- Cypress
 
 ## How to run the project
 

@@ -37,6 +37,7 @@ Este projeto gerencia turmas de uma escola de música, permitindo agrupar alunos
 - Context API
 - Vitest
 - Testing Library
+- Cypress
 
 ## Como rodar o projeto em sua máquina
 
