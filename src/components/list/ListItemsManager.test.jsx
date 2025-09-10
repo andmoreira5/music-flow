@@ -29,9 +29,9 @@ describe("ListItemsManager", () => {
     expect(screen.getByText(/Bob/i)).toBeTruthy();
   });
 
-  test("renders 'NENHUM REGISTRO' when data is empty", () => {
+  test("renders 'NO ENTRIES' when data is empty", () => {
     dataMock = { users: [] };
     render(<ListItemsManager />);
-    expect(screen.getByText(/NENHUM REGISTRO/i)).toBeTruthy();
+    expect(screen.getByText(/NO ENTRIES/i)).toBeTruthy();
   });
 });

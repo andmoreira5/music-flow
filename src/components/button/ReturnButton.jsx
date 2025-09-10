@@ -11,7 +11,7 @@ export default function ReturnButton({ onClick }) {
          shadow-lg transition duration-300 cursor-pointer z-50"
       >
         <FaUndo size={20} color="white" />
-        <span>Voltar</span>
+        <span>Back</span>
       </button>
     </div>
   );

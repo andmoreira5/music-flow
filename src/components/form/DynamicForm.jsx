@@ -106,7 +106,7 @@ export default function DynamicForm() {
           return (
             <div key={index} className="mb-5 bg-gray-700 p-3 rounded-sm">
               <label className="text-gray-300 font-bold">
-                {column.name + (column.required ? " (Obrigatório)" : "")}
+                {column.name + (column.required ? " (Required)" : "")}
                 <input
                   type={column.type || "text"}
                   name={field}

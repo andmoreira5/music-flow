@@ -3,29 +3,29 @@ import { FaChalkboardTeacher, FaMusic, FaUserGraduate } from "react-icons/fa";
 export const menuButton = {
   registration: [
     {
-      label: "Alunos",
+      label: "Students",
       icon: FaUserGraduate,
       color: "bg-sky-800",
       property: "student",
       navigation: "/manageRegistrations",
-      title: "GERENCIAR ALUNOS",
+      title: "MANAGE STUDENTS",
     },
     {
-      label: "Professores",
+      label: "Professors",
       icon: FaChalkboardTeacher,
       color: "bg-green-800",
       property: "professor",
       navigation: "/manageRegistrations",
-      title: "GERENCIAR PROFESSORES",
+      title: "MANAGE PROFESSORS",
     },
   ],
   classes: [
     {
-      label: "Turmas",
+      label: "Classes",
       icon: FaMusic,
       color: "bg-red-900",
       navigation: "/manageClasses",
-      title: "GERENCIAR TURMAS",
+      title: "MANAGE CLASSES",
     },
   ],
 };

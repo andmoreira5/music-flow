@@ -45,7 +45,9 @@ export default function Login() {
 
   const handleLogin = async () => {
     if (username === "" || password === "") {
-      toast.error("E-MAIL OU SENHA NÃO PODEM FICAR VAZIOS");
+      toast.error("EMAIL OR PASSWORD CANNOT BE EMPTY");
+    } else if (username != dataLogin.email || password != dataLogin.password) {
+      toast.error("EMAIL AND/OR PASSWORD INCORRECT!");
     } else {
       setLoading(true);
       setTimeout(() => {
@@ -72,7 +74,7 @@ export default function Login() {
         <div className="flex flex-row items-center justify-center mb-4 gap-1">
           <img src="/favicon.svg" className="w-20 h-20" />
           <h1 className="text-center  text-2xl font-bold  text-white ">
-            Bem-vindo(a) ao Music Flow
+            Welcome to Music Flow
           </h1>
         </div>
         <input
@@ -117,7 +119,9 @@ export default function Login() {
           </button>
         )}
 
-        <p className="text-center text-gray-300 mt-3 -mb-3">Versão {version}</p>
+        <p className="text-center text-gray-300 mt-3 -mb-3">
+          Version {version}
+        </p>
       </div>
     </div>
   );

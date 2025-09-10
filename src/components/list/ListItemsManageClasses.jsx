@@ -13,7 +13,7 @@ export default function ListItemsManageClasses() {
           ))}
         </div>
       ) : (
-        <div className="dark: text-gray-300 text-center">NENHUM REGISTRO</div>
+        <div className="dark: text-gray-300 text-center">NO ENTRIES</div>
       )}
     </>
   );

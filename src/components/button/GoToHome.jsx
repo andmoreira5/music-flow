@@ -19,9 +19,7 @@ export default function GoToHome() {
       rounded-md px-2 md:px-4 h-16 py-2 flex flex-col items-center cursor-pointer"
     >
       <IoHome size={35} className="mb-1" color="white" />
-      <span className="text-sm text-white font-bold hidden sm:block">
-        INÍCIO
-      </span>
+      <span className="text-sm text-white font-bold hidden sm:block">HOME</span>
     </button>
   );
 }

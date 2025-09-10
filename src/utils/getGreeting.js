@@ -1,11 +1,10 @@
 export const getGreeting = () => {
   const currentTime = new Date().getHours();
-
   if (currentTime >= 5 && currentTime < 12) {
-    return "BOM DIA";
+    return "GOOD MORNING";
   } else if (currentTime >= 12 && currentTime < 18) {
-    return "BOA TARDE";
+    return "GOOD AFTERNOON";
   } else {
-    return "BOA NOITE";
+    return "GOOD EVENING";
   }
 };

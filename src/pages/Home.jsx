@@ -25,8 +25,8 @@ export default function Home() {
   }, []);
 
   const sections = [
-    { title: "GESTÃO DE CADASTROS", items: menuButton.registration },
-    { title: "GESTÃO DE TURMAS", items: menuButton.classes },
+    { title: "REGISTRATION MANAGEMENT", items: menuButton.registration },
+    { title: "CLASS MANAGEMENT", items: menuButton.classes },
   ];
 
   const attachOnClick = (el) => ({

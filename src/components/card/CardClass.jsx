@@ -42,7 +42,7 @@ export default function CardClass({ item, showButtons = true }) {
           <div className="pl-1">
             <p className="text-sm opacity-70">{item?.time}</p>
             <p className="text-sm opacity-70">
-              {item?.students?.length} ALUNO(S) MATRICULADO(S)
+              {item?.students?.length} STUDENT(S) ENROLLED
             </p>
           </div>
         </div>
@@ -52,12 +52,12 @@ export default function CardClass({ item, showButtons = true }) {
         <div className="mr-0 sm:mr-2 flex flex-row sm:flex-col gap-5  ">
           <ButtonActionItem color={"bg-blue-500"} onClick={handleEdit}>
             <FaPencilAlt size={20} color="white" />
-            <span>Editar</span>
+            <span>Edit</span>
           </ButtonActionItem>
 
           <ButtonActionItem color={"bg-red-500"} onClick={handleDelete}>
             <FaTrashAlt size={20} color="white" />
-            <span>Excluir</span>
+            <span>Delete</span>
           </ButtonActionItem>
         </div>
       )}

@@ -5,6 +5,6 @@ export const dataLogin = {
 
 export const userData = {
   ...dataLogin,
-  name: "Usuário Teste",
-  userType: "ADMINISTRADOR",
+  name: "Test User",
+  userType: "ADMIN",
 };

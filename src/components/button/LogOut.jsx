@@ -13,7 +13,9 @@ const LogoutButton = () => {
       rounded-md px-2 h-16 md:px-4 py-1 md:py-2 flex flex-col items-center cursor-pointer"
     >
       <BiLogOut size={35} color="white" />
-      <span className="text-sm hidden sm:block text-white font-bold">SAIR</span>
+      <span className="text-sm hidden sm:block text-white font-bold">
+        LOGOUT
+      </span>
     </button>
   );
 };

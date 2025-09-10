@@ -17,7 +17,7 @@ export default function HeaderTotal({
       <div className="flex flex-row gap-5">
         <IconCircleButton
           selected={selected == 1}
-          label="Lista"
+          label="List"
           onClick={() => {
             setSelected(1);
           }}
@@ -26,7 +26,7 @@ export default function HeaderTotal({
         </IconCircleButton>
         <IconCircleButton
           selected={selected == 2}
-          label="Adicionar"
+          label="Add"
           onClick={() => {
             setSelectedItem(null);
             setSelected(2);

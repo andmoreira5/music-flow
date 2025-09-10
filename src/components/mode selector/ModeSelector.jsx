@@ -9,7 +9,7 @@ export default function ModeSelector({ mode, setMode }) {
           mode === "student" ? "bg-green-700" : "bg-gray-500"
         } text-white font-semibold cursor-pointer`}
       >
-        Alunos
+        Students
       </button>
       <button
         type="button"
@@ -18,7 +18,7 @@ export default function ModeSelector({ mode, setMode }) {
           mode === "professor" ? "bg-green-700" : "bg-gray-500"
         } text-white font-semibold cursor-pointer`}
       >
-        Professores
+        Professors
       </button>
     </div>
   );

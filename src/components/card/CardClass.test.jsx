@@ -40,7 +40,7 @@ describe("CardClass", () => {
     render(<CardClass item={mockItem} />);
     expect(screen.getByText("MATH")).toBeInTheDocument();
     expect(screen.getByText("08:00 - 10:00")).toBeInTheDocument();
-    expect(screen.getByText("2 ALUNO(S) MATRICULADO(S)")).toBeInTheDocument();
+    expect(screen.getByText("2 STUDENT(S) ENROLLED")).toBeInTheDocument();
   });
 
   test("should call edit handler when Edit button is clicked", () => {

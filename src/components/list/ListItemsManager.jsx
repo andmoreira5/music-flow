@@ -12,7 +12,7 @@ export default function ListItemsManager() {
             <CardPerson item={el} key={index} />
           ))
         ) : (
-          <div>NENHUM REGISTRO</div>
+          <div>NO ENTRIES</div>
         )}
       </div>
     </>

@@ -1,6 +1,5 @@
 import ListItemsManager from "../components/list/ListItemsManager.jsx";
 import { useAppContext } from "../context/ContextProvider.jsx";
-import { translate } from "../data/translate.js";
 import DynamicForm from "../components/form/DynamicForm.jsx";
 import ConfirmationModal from "../components/confirmation modal/ConfirmationModal.jsx";
 import HeaderTotal from "../components/header total/HeaderTotal.jsx";
@@ -34,14 +33,11 @@ export default function ManageRegistrations() {
             selected={selectedButtonManageRegistrations}
             setSelected={setSelectedButtonManageRegistrations}
             setItemSelected={setSelectedItem}
-            subtitle={
-              translate[tableSelected]?.toUpperCase() +
-              (translate[tableSelected] == "Professor" ? "(ES)" : "(S)")
-            }
+            subtitle={tableSelected.toUpperCase() + "(S)"}
           />
 
           <span className="w-full justify-center flex mb-5 dark:text-gray-300 text-gray-700 -mt-1 sm:-mt-12">
-            Clique na foto para visualizar o cadastro
+            Click the photo to see the registration details
           </span>
         </>
       )}

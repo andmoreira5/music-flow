@@ -6,7 +6,7 @@ export default function SelectedPersons({ students, professors }) {
       {professors?.length > 0 && (
         <div className="mb-6">
           <h2 className="text-gray-300 font-bold text-lg mb-2">
-            Professores Selecionados
+            Selected Professors
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
             {professors.map((prof) => (
@@ -19,7 +19,7 @@ export default function SelectedPersons({ students, professors }) {
       {students?.length > 0 && (
         <div>
           <h2 className="text-gray-300 font-bold text-lg mb-2">
-            Alunos Selecionados
+            Selected Students
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
             {students.map((student) => (

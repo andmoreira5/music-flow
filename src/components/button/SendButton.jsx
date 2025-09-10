@@ -12,7 +12,7 @@ export default function SendButton({ onClick }) {
          shadow-lg transition duration-300 cursor-pointer"
       >
         <FaRegPaperPlane size={20} color="white" />
-        <span>Enviar</span>
+        <span>Submit</span>
       </button>
     </div>
   );

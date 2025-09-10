@@ -1,19 +1,25 @@
+import { MESSAGES } from "../data/messages.js";
+
 describe("Login flow", () => {
-  it("logs in successfully", () => {
+  it("handles wrong login", () => {
     cy.visit("/");
-    cy.get('[data-testid="inputEmailLogin"]').should(
-      "have.value",
-      "adm@adm.com"
-    );
-    cy.get('[data-testid="inputPasswordLogin"]').should("have.value", "adm065");
+    cy.get('[data-testid="inputEmailLogin"]').clear();
     cy.get('[data-testid="buttonLogin"]').click();
+    cy.contains(MESSAGES.empty).should("exist");
+    cy.get('[data-testid="inputEmailLogin"]').type("example@mail.com");
+    cy.get('[data-testid="buttonLogin"]').click();
+    cy.contains(MESSAGES.invalid).should("exist");
+  });
+
+  it("logs in successfully, toggles dark mode, and logs out ", () => {
+    cy.login();
     cy.url().should("include", "/home");
-    cy.contains("BOA TARDE, USUÁRIO TESTE!").should("be.visible");
+    cy.contains("ADMIN").should("exist");
     cy.get("html").should("not.have.class", "dark");
-    cy.contains("CLARO").should("be.visible");
+    cy.contains("LIGHT").should("be.visible");
     cy.get('[data-testid="darkModeSwitch"]').click();
     cy.get("html").should("have.class", "dark");
-    cy.contains("ESCURO").should("be.visible");
+    cy.contains("DARK").should("be.visible");
     cy.get('[data-testid="logoutButton"]').click();
     cy.url().should("include", "/login");
   });

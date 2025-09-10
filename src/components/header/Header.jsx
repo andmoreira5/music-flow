@@ -54,7 +54,7 @@ export default function Header() {
             size={40}
           />
           <p className="text-center font-bold text-sky-800  dark:text-gray-200 dark:text-sm text-md hidden sm:block">
-            {isDarkMode ? "ESCURO" : "CLARO"}
+            {isDarkMode ? "DARK" : "LIGHT"}
           </p>
         </div>
       ) : (

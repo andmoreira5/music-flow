@@ -1,13 +1,8 @@
 const person = [
-  { name: "Nome completo:", field: "name", type: "text", required: true },
-  {
-    name: "Data de nascimento",
-    field: "dateOfBirth",
-    type: "date",
-    required: true,
-  },
-  { name: "Endereço", field: "address", type: "text", required: true },
-  { name: "Contato", field: "contact", type: "text", required: true },
+  { name: "Full Name", field: "name", type: "text", required: true },
+  { name: "Date of Birth", field: "dateOfBirth", type: "date", required: true },
+  { name: "Address", field: "address", type: "text", required: true },
+  { name: "Contact", field: "contact", type: "text", required: true },
 ];
 
 export const columns = {
