@@ -49,7 +49,7 @@ describe("CardPerson", () => {
 
   test("should call edit handler when Edit button is clicked", () => {
     render(<CardPerson item={mockItem} />);
-    fireEvent.click(screen.getByText(/editar/i));
+    fireEvent.click(screen.getByText(/edit/i));
 
     expect(mockSetSelectedItem).toHaveBeenCalledWith(mockItem);
     expect(mockSetIsEditing).toHaveBeenCalledWith(true);

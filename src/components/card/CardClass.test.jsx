@@ -45,7 +45,7 @@ describe("CardClass", () => {
 
   test("should call edit handler when Edit button is clicked", () => {
     render(<CardClass item={mockItem} />);
-    fireEvent.click(screen.getByText(/editar/i));
+    fireEvent.click(screen.getByText(/edit/i));
     expect(mockSetSelectedItem).toHaveBeenCalledWith(mockItem);
     expect(mockSetIsEditing).toHaveBeenCalledWith(true);
     expect(mockSetSelectedButtonManageClasses).toHaveBeenCalledWith(2);
@@ -53,15 +53,15 @@ describe("CardClass", () => {
 
   test("should call delete handler when Delete button is clicked", () => {
     render(<CardClass item={mockItem} />);
-    fireEvent.click(screen.getByText(/excluir/i));
+    fireEvent.click(screen.getByText(/delete/i));
     expect(mockSetSelectedItem).toHaveBeenCalledWith(mockItem);
     expect(mockSetVisibleConfirmationScreen).toHaveBeenCalledWith(true);
   });
 
   test("should not render action buttons if showButtons is false", () => {
     render(<CardClass item={mockItem} showButtons={false} />);
-    expect(screen.queryByText(/editar/i)).not.toBeInTheDocument();
-    expect(screen.queryByText(/excluir/i)).not.toBeInTheDocument();
+    expect(screen.queryByText(/edit/i)).not.toBeInTheDocument();
+    expect(screen.queryByText(/delete/i)).not.toBeInTheDocument();
   });
 
   test("should render IconComponent if provided", () => {

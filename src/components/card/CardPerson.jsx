@@ -66,14 +66,14 @@ export default function CardPerson({
         <div className="mr-0 sm:mr-2 flex flex-row sm:flex-col gap-5  ">
           <ButtonActionItem color={"bg-blue-500"} onClick={handleEdit}>
             <FaPencilAlt size={20} color="white" />
-            <span>Editar</span>
+            <span>Edit</span>
           </ButtonActionItem>
           {tableSelected == "localidade" && item.id == 1 ? (
             <></>
           ) : (
             <ButtonActionItem color={"bg-red-500"} onClick={handleDelete}>
               <FaTrashAlt size={20} color="white" />
-              <span>Excluir</span>
+              <span>Delete</span>
             </ButtonActionItem>
           )}
         </div>

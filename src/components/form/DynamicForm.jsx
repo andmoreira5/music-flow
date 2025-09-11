@@ -26,7 +26,7 @@ export default function DynamicForm() {
     e.preventDefault();
 
     if (!validateContact(formData.contact)) {
-      toast.error("Número de contato inválido");
+      toast.error("Invalid contact number");
       return;
     }
 
@@ -70,9 +70,7 @@ export default function DynamicForm() {
     setSelectedButtonManageRegistrations(1);
 
     toast.success(
-      isEditing
-        ? "Cadastro atualizado com sucesso!"
-        : "Cadastro adicionado com sucesso!"
+      isEditing ? "Record updated successfully!" : "Record added successfully!"
     );
   };
   const handleReturn = () => {
