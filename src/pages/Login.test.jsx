@@ -36,7 +36,7 @@ describe("Login", () => {
   });
 
   test("Should show error message when have one or two empty input", () => {
-    const messageError = "E-MAIL OU SENHA NÃO PODEM FICAR VAZIOS";
+    const messageError = "EMAIL OR PASSWORD CANNOT BE EMPTY";
 
     fireEvent.input(inputEmail, { target: { value: "" } });
 

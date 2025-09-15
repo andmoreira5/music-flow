@@ -52,8 +52,8 @@ describe("HeaderTotal", () => {
     );
 
     expect(screen.getByText(/2 - Students/i)).toBeTruthy();
-    expect(screen.getByText(/Lista/i)).toBeTruthy();
-    expect(screen.getByText(/Adicionar/i)).toBeTruthy();
+    expect(screen.getByText(/List/i)).toBeTruthy();
+    expect(screen.getByText(/Add/i)).toBeTruthy();
   });
 
   test("calls setSelected when Lista button is clicked", () => {
@@ -66,7 +66,7 @@ describe("HeaderTotal", () => {
       />
     );
 
-    fireEvent.click(screen.getByText(/Lista/i));
+    fireEvent.click(screen.getByText(/List/i));
     expect(mockSetSelected).toHaveBeenCalledWith(1);
   });
 
@@ -80,7 +80,7 @@ describe("HeaderTotal", () => {
       />
     );
 
-    fireEvent.click(screen.getByText(/Adicionar/i));
+    fireEvent.click(screen.getByText(/Add/i));
     expect(mockSetSelectedItem).toHaveBeenCalledWith(null);
     expect(mockSetSelected).toHaveBeenCalledWith(2);
   });

@@ -58,7 +58,7 @@ describe("CardPerson", () => {
 
   test("should call delete handler when Delete button is clicked", () => {
     render(<CardPerson item={mockItem} />);
-    fireEvent.click(screen.getByText(/excluir/i));
+    fireEvent.click(screen.getByText(/delete/i));
 
     expect(mockSetSelectedItem).toHaveBeenCalledWith(mockItem);
     expect(mockSetVisibleConfirmationScreen).toHaveBeenCalledWith(true);
@@ -67,7 +67,7 @@ describe("CardPerson", () => {
   test("should not render delete button if tableSelected is localidade and id is 1", () => {
     tableSelectedMock = "localidade";
     render(<CardPerson item={{ ...mockItem, id: 1 }} />);
-    expect(screen.queryByText(/excluir/i)).not.toBeInTheDocument();
+    expect(screen.queryByText(/delete/i)).not.toBeInTheDocument();
   });
 
   test("should render delete icon if showDelete is true", () => {

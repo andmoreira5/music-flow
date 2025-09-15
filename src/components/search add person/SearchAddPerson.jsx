@@ -23,9 +23,7 @@ export default function SearchAddPerson({ mode, dataList, onAddPerson }) {
     <div className="mt-6 flex justify-center relative">
       <input
         type="text"
-        placeholder={`Adicionar ${
-          mode === "student" ? "aluno" : "professor"
-        }...`}
+        placeholder={`Add ${mode}...`}
         value={search}
         onChange={(e) => setSearch(e.target.value)}
         className="w-1/2 p-2 bg-gray-200 text-black rounded"
