@@ -1,22 +1,26 @@
 import { insertPerson } from "./insertPerson.js";
 
-describe("Insert student ", () => {
+describe("Inserting a person", () => {
   beforeEach(() => {
     cy.login();
   });
 
-  it("shouldn't be able insert item with a required field not typed", () => {
-    cy.contains("button", "Students").click();
-    cy.contains("div", "Add").click();
-    cy.contains("button", "Submit").click();
-    cy.contains("Required").should("be.visible");
+  it("displays an error when a required field is empty", () => {
+    ["Students", "Professors"].forEach((el) => {
+      cy.contains("button", el).click();
+      cy.url().should("include", "/manageRegistrations");
+      cy.contains("div", "Add").click();
+      cy.contains("button", "Submit").click();
+      cy.contains("Required").should("be.visible");
+      cy.contains("button", "HOME").click();
+    });
   });
 
-  it("Should be able to insert a student", () => {
+  it("inserts a student when all fields are filled", () => {
     insertPerson("student");
   });
 
-  it("Should be able to insert a professor", () => {
+  it("inserts a professor when all fields are filled", () => {
     insertPerson("professor");
   });
 });

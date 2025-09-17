@@ -64,7 +64,11 @@ export default function CardPerson({
 
       {showButtons && (
         <div className="mr-0 sm:mr-2 flex flex-row sm:flex-col gap-5  ">
-          <ButtonActionItem color={"bg-blue-500"} onClick={handleEdit}>
+          <ButtonActionItem
+            data-cy="edit-button"
+            color={"bg-blue-500"}
+            onClick={handleEdit}
+          >
             <FaPencilAlt size={20} color="white" />
             <span>Edit</span>
           </ButtonActionItem>
