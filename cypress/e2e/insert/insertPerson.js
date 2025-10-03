@@ -1,11 +1,10 @@
 import { faker } from "@faker-js/faker";
 import { MESSAGES } from "../../data/messages.js";
 
-export const insertPerson = (type = "student") => {
+export const insertPerson = (type = "student", name = "") => {
   cy.contains("button", type === "student" ? "Students" : "Professors").click();
   cy.contains("div", "Add").click();
-
-  const name = faker.person.fullName();
+  if (name == "") name = faker.person.fullName();
   cy.get('[name="name"]').type(name);
   cy.get('[name="dateOfBirth"]').type(
     faker.date

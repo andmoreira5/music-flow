@@ -35,9 +35,9 @@ describe("ConfirmationModal", () => {
 
   test("renders the modal when visible", () => {
     render(<ConfirmationModal />);
-    expect(screen.getByText(/CONFIRMAR EXCLUSÃO/i)).toBeTruthy();
+    expect(screen.getByText(/CONFIRM DELETION/i)).toBeTruthy();
     expect(screen.getByText(/OK/i)).toBeTruthy();
-    expect(screen.getByText(/Cancelar/i)).toBeTruthy();
+    expect(screen.getByText(/Cancel/i)).toBeTruthy();
   });
 
   test("calls setData and closes modal when OK is clicked (users)", () => {
@@ -50,7 +50,7 @@ describe("ConfirmationModal", () => {
 
   test("closes modal when Cancel is clicked", () => {
     render(<ConfirmationModal />);
-    fireEvent.click(screen.getByText(/Cancelar/i));
+    fireEvent.click(screen.getByText(/Cancel/i));
     expect(mockSetVisibleConfirmationScreen).toHaveBeenCalledWith(false);
   });
 

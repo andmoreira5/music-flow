@@ -30,7 +30,7 @@ export default function ConfirmationModal() {
       }));
     }
     setVisibleConfirmationScreen(false);
-    toast.success("Removido com sucesso!");
+    toast.success("Removed successfully!");
   }
 
   return (
@@ -58,7 +58,7 @@ export default function ConfirmationModal() {
             -m-8  rounded-t-lg text-center border-b-4 bg-red-700
             `}
         >
-          CONFIRMAR EXCLUSÃO?
+          CONFIRM DELETION?
         </div>
         {location.pathname.includes("manageClasses") ? (
           <CardClass index={1000} item={selectedItem} showButtons={false} />
@@ -82,7 +82,7 @@ export default function ConfirmationModal() {
             }}
           >
             <FaTimesCircle size={20} color="white" />
-            <span>Cancelar</span>
+            <span>Cancel</span>
           </button>
         </div>
       </div>
