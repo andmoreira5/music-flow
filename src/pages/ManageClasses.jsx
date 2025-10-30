@@ -30,7 +30,7 @@ export default function ManageClasses() {
             array={classes}
             selected={selectedButtonManageClasses}
             setSelected={setSelectedButtonManageClasses}
-            subtitle="TURMA(S)"
+            subtitle="CLASS(ES)"
           />
         </>
       )}

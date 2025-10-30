@@ -4,22 +4,22 @@ import { GiPianoKeys } from "react-icons/gi";
 export const course = [
   {
     id: 1,
-    name: "VIOLÃO",
+    name: "Guitar",
     icon: FaGuitar,
   },
   {
     id: 2,
-    name: "BATERIA",
+    name: "Drums",
     icon: FaDrum,
   },
   {
     id: 3,
-    name: "CANTO",
+    name: "Singing",
     icon: FaMicrophone,
   },
   {
     id: 4,
-    name: "TECLADO",
+    name: "Keyboard",
     icon: GiPianoKeys,
   },
 ];

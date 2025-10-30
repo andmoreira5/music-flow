@@ -1,9 +1,9 @@
 export const weekDays = [
-  { id: 1, name: "Domingo" },
-  { id: 2, name: "Segunda-feira" },
-  { id: 3, name: "Terça-feira" },
-  { id: 4, name: "Quarta-feira" },
-  { id: 5, name: "Quinta-feira" },
-  { id: 6, name: "Sexta-feira" },
-  { id: 7, name: "Sábado" },
+  { id: 1, name: "Sunday" },
+  { id: 2, name: "Monday" },
+  { id: 3, name: "Tuesday" },
+  { id: 4, name: "Wednesday" },
+  { id: 5, name: "Thursday" },
+  { id: 6, name: "Friday" },
+  { id: 7, name: "Saturday" },
 ];

@@ -36,10 +36,9 @@ export default function AddClass() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (!formData.time)
-      return toast.error("O campo 'horário' não pode ficar vazio.");
+    if (!formData.time) return toast.error("The 'time' field cannot be empty.");
     if (!/^([01]\d|2[0-3]):([0-5]\d)$/.test(formData.time))
-      return alert("O campo 'horário' deve estar no formato válido HH:MM.");
+      return alert("Please enter a valid time in the format HH:MM.");
 
     const courseObj = course.find((c) => c.id == formData.course);
     const weekDayObj = weekDays.find((w) => w.id == formData.weekDay);
@@ -63,7 +62,7 @@ export default function AddClass() {
         : [...prev, baseData];
     });
 
-    toast.success("Turma adicionada com sucesso!");
+    toast.success("Class added successfully!");
     setSelectedButtonManageClasses(1);
   };
 

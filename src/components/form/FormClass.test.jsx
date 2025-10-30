@@ -26,15 +26,15 @@ describe("FormClass", () => {
       <FormClass formData={formDataMock} handleChange={mockHandleChange} />
     );
 
-    const courseSelect = screen.getByLabelText(/Curso/i);
+    const courseSelect = screen.getByLabelText(/Course/i);
     expect(courseSelect).toBeTruthy();
     expect(courseSelect.value).toBe(formDataMock.course.toString());
 
-    const weekDaySelect = screen.getByLabelText(/Dia da Semana/i);
+    const weekDaySelect = screen.getByLabelText(/Weekday/i);
     expect(weekDaySelect).toBeTruthy();
     expect(weekDaySelect.value).toBe(formDataMock.weekDay.toString());
 
-    const timeInput = screen.getByLabelText(/Horário/i);
+    const timeInput = screen.getByLabelText(/Time/i);
     expect(timeInput).toBeTruthy();
     expect(timeInput.value).toBe(formDataMock.time);
   });
@@ -43,7 +43,7 @@ describe("FormClass", () => {
     render(
       <FormClass formData={formDataMock} handleChange={mockHandleChange} />
     );
-    const courseSelect = screen.getByLabelText(/Curso/i);
+    const courseSelect = screen.getByLabelText(/Course/i);
     fireEvent.change(courseSelect, { target: { value: course[1]?.id || "" } });
     expect(mockHandleChange).toHaveBeenCalled();
   });
@@ -52,7 +52,7 @@ describe("FormClass", () => {
     render(
       <FormClass formData={formDataMock} handleChange={mockHandleChange} />
     );
-    const weekDaySelect = screen.getByLabelText(/Dia da Semana/i);
+    const weekDaySelect = screen.getByLabelText(/Weekday/i);
     fireEvent.change(weekDaySelect, {
       target: { value: weekDays[1]?.id || "" },
     });
@@ -63,7 +63,7 @@ describe("FormClass", () => {
     render(
       <FormClass formData={formDataMock} handleChange={mockHandleChange} />
     );
-    const timeInput = screen.getByLabelText(/Horário/i);
+    const timeInput = screen.getByLabelText(/Time/i);
     fireEvent.change(timeInput, { target: { value: "12:30" } });
     expect(mockHandleChange).toHaveBeenCalled();
   });

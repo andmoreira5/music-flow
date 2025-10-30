@@ -6,7 +6,7 @@ export default function FormClass({ formData, handleChange }) {
     <form className="bg-gray-800 px-4 pt-4 rounded-md shadow sm:grid grid-cols-3 gap-10">
       <div className="mb-5">
         <label htmlFor="course" className="text-gray-300 font-bold block mb-1">
-          Curso
+          Course
         </label>
         <select
           id="course"
@@ -26,7 +26,7 @@ export default function FormClass({ formData, handleChange }) {
 
       <div className="mb-5">
         <label htmlFor="weekDay" className="text-gray-300 font-bold block mb-1">
-          Dia da Semana
+          Weekday
         </label>
         <select
           id="weekDay"
@@ -46,7 +46,7 @@ export default function FormClass({ formData, handleChange }) {
 
       <div className="mb-5">
         <label htmlFor="time" className="text-gray-300 font-bold block mb-1">
-          Horário
+          Time
         </label>
         <input
           id="time"

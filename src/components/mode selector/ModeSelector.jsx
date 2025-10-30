@@ -1,7 +1,7 @@
 export default function ModeSelector({ mode, setMode }) {
   return (
     <div className="mt-8 text-center">
-      <span className="text-gray-300 font-bold mr-4">Modo de inserção:</span>
+      <span className="dark:text-gray-300 font-bold mr-4">Entry mode:</span>
       <button
         type="button"
         onClick={() => setMode("student")}
