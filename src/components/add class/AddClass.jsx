@@ -48,11 +48,11 @@ export default function AddClass() {
         prev.length > 0 ? Math.max(...prev.map((c) => c.id)) + 1 : 1;
       const baseData = {
         id: selectedItem ? selectedItem.id : nextId,
-        course: courseObj?.name || "Não encontrado",
+        course: courseObj?.name || "Not found",
         courseId: formData.course,
         weekDayId: formData.weekDay,
         icon: courseObj?.icon || "",
-        weekDay: weekDayObj?.name || "Não encontrado",
+        weekDay: weekDayObj?.name || "Not found",
         time: formData.time,
         students: selectedStudents,
         professors: selectedProfessors,
