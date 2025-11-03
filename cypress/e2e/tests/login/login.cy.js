@@ -1,4 +1,4 @@
-import { MESSAGES } from "../data/messages.js";
+import { MESSAGES } from "../../../data/messages.js";
 
 describe("Login flow", () => {
   it("handles wrong login", () => {

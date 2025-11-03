@@ -1,5 +1,5 @@
 import { faker } from "@faker-js/faker";
-import { insertPerson } from "../insert/insertPerson.js";
+import { insertPerson } from "./insertPerson.js";
 
 export const deletePerson = (screen) => {
   const name = faker.person.fullName();

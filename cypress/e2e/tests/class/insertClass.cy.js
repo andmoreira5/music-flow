@@ -1,4 +1,5 @@
-import { course } from "../../../src/data/course.js";
+import { course } from "../../../../src/data/course.js";
+
 describe("Insert a class", () => {
   beforeEach(() => {
     cy.login();

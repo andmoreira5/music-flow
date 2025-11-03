@@ -1,4 +1,4 @@
-import { deletePerson } from "./deletePerson.js";
+import { deletePerson } from "../../helpers/person/deletePerson.js";
 
 describe("Deleting a person", () => {
   beforeEach(() => {

@@ -1,4 +1,4 @@
-import { insertPerson } from "./insertPerson.js";
+import { insertPerson } from "../../helpers/person/insertPerson.js";
 
 describe("Inserting a person", () => {
   beforeEach(() => {

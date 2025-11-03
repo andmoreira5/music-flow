@@ -1,5 +1,5 @@
 import { faker } from "@faker-js/faker";
-import { MESSAGES } from "../../data/messages.js";
+import { MESSAGES } from "../../../data/messages.js";
 
 export const insertPerson = (type = "student", name = "") => {
   cy.contains("button", type === "student" ? "Students" : "Professors").click();

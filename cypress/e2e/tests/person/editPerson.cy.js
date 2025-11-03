@@ -1,6 +1,6 @@
 import { faker } from "@faker-js/faker";
-import { editPerson } from "./editPerson.js";
-import { MESSAGES } from "../../data/messages.js";
+import { MESSAGES } from "../../../data/messages.js";
+import { editPerson } from "../../helpers/person/editPerson.js";
 
 describe("Editing a person", () => {
   beforeEach(() => {
