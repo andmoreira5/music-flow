@@ -7,7 +7,10 @@ export default function ListItemsManageClasses() {
   return (
     <>
       {classes && classes.length > 0 ? (
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
+        <div
+          data-testid="classes"
+          className="grid grid-cols-1 lg:grid-cols-2 gap-4 "
+        >
           {classes.map((el, index) => (
             <CardClass key={index} item={el} />
           ))}
