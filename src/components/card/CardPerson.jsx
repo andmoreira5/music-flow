@@ -55,7 +55,9 @@ export default function CardPerson({
           {renderItem()}
         </div>
         <div className="ml-4 flex-1">
-          <h2 className="text-lg font-bold">{item?.name?.toUpperCase()}</h2>
+          <h2 data-testid="nameCard" className="text-lg font-bold">
+            {item?.name?.toUpperCase()}
+          </h2>
           <div className="pl-1">
             <p className="text-sm opacity-70">{item?.address}</p>
           </div>

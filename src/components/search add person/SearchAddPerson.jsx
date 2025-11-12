@@ -23,6 +23,7 @@ export default function SearchAddPerson({ mode, dataList, onAddPerson }) {
     <div className="mt-6 flex justify-center relative">
       <input
         type="text"
+        data-testid="addPerson"
         placeholder={`Add ${mode}...`}
         value={search}
         onChange={(e) => setSearch(e.target.value)}
