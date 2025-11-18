@@ -6,7 +6,7 @@ import { toast } from "react-toastify";
 import SendButton from "../button/SendButton.jsx";
 import ModeSelector from "../mode selector/ModeSelector.jsx";
 import SearchAddPerson from "../search add person/SearchAddPerson.jsx";
-import SelectedPersons from "../selected person/SelectedPerson.jsx";
+import SelectedPerson from "../selected person/SelectedPerson.jsx";
 import FormClass from "../form/FormClass.jsx";
 
 export default function AddClass() {
@@ -31,6 +31,14 @@ export default function AddClass() {
     } else {
       if (!selectedProfessors.some((p) => p.id === item.id))
         setSelectedProfessors((prev) => [...prev, item]);
+    }
+  };
+
+  const handleRemovePerson = (item) => {
+    if (mode === "student") {
+      setSelectedStudents((prev) => prev.filter((el) => el.id != item.id));
+    } else {
+      setSelectedProfessors((prev) => prev.filter((el) => el.id != item.id));
     }
   };
 
@@ -88,9 +96,10 @@ export default function AddClass() {
         dataList={mode === "student" ? data?.student : data?.professor}
         onAddPerson={handleAddPerson}
       />
-      <SelectedPersons
+      <SelectedPerson
         students={selectedStudents}
         professors={selectedProfessors}
+        onRemovePerson={handleRemovePerson}
       />
     </div>
   );

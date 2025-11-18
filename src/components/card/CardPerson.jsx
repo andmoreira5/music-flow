@@ -7,6 +7,7 @@ export default function CardPerson({
   item,
   showButtons = true,
   showDelete = false,
+  onRemovePerson,
 }) {
   const {
     tableSelected,
@@ -46,6 +47,7 @@ export default function CardPerson({
     <div
       className="bg-gray-800 relative rounded-lg shadow-md p-4 
         flex flex-col md:flex-row items-center text-white gap-4"
+      data-testid="cardPerson"
     >
       <div className="flex flex-row justify-around w-full">
         <div
@@ -85,7 +87,12 @@ export default function CardPerson({
         </div>
       )}
       {showDelete && (
-        <div className="absolute bg-red-800 -right-3 -top-3 p-3 rounded-3xl border-2 border-white ">
+        <div
+          className="absolute bg-red-800 -right-3 -top-3 p-3 rounded-3xl 
+          border-2 border-white cursor-pointer "
+          data-testid="removePersonFromList"
+          onClick={() => onRemovePerson(item)}
+        >
           <FaTrashAlt />
         </div>
       )}

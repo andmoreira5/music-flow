@@ -1,6 +1,10 @@
 import CardPerson from "../../components/card/CardPerson.jsx";
 
-export default function SelectedPersons({ students, professors }) {
+export default function SelectedPerson({
+  students,
+  professors,
+  onRemovePerson,
+}) {
   return (
     <div className="mt-10">
       {professors?.length > 0 && (
@@ -13,7 +17,12 @@ export default function SelectedPersons({ students, professors }) {
             className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4"
           >
             {professors.map((prof) => (
-              <CardPerson key={prof.id} item={prof} showButtons={false} />
+              <CardPerson
+                key={prof.id}
+                item={prof}
+                showButtons={false}
+                onRemovePerson={onRemovePerson}
+              />
             ))}
           </div>
         </div>
@@ -29,7 +38,13 @@ export default function SelectedPersons({ students, professors }) {
             className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4"
           >
             {students.map((student) => (
-              <CardPerson key={student.id} item={student} showButtons={false} />
+              <CardPerson
+                key={student.id}
+                item={student}
+                showButtons={false}
+                showDelete={true}
+                onRemovePerson={onRemovePerson}
+              />
             ))}
           </div>
         </div>
